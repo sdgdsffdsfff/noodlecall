@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+			http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+			http://activemq.apache.org/schema/core	http://activemq.apache.org/schema/core/activemq-core-5.5.0.xsd"
+	default-autowire="byName">
+	
+	<context:component-scan base-package="org.fl.noodlecall.console" use-default-filters="false" >
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Service" />
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Repository" />
+	</context:component-scan>
+	
+	<bean id="masterDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+		<property name="driverClass" value="com.mysql.jdbc.Driver" />
+		<property name="jdbcUrl" value="jdbc:mysql://${console.db.master.ip}:${console.db.master.port}/${console.db.name}?useUnicode=true&amp;characterEncoding=UTF-8" />
+		<property name="user" value="${console.db.uesr}" />
+		<property name="password" value="${console.db.password}" />
+		
+		<property name="minPoolSize" value="20" />
+    <property name="maxPoolSize" value="300" />  
+    <property name="initialPoolSize" value="20" />
+    <property name="maxIdleTime" value="25000" />
+    <property name="acquireIncrement" value="10" />
+   
+    <property name="acquireRetryAttempts" value="30" />
+    <property name="acquireRetryDelay" value="1000" />
+    <property name="testConnectionOnCheckin" value="true" />
+    <property name="idleConnectionTestPeriod" value="3" />
+    <property name="checkoutTimeout" value="5000"/>
+	</bean>
+	
+	<bean id="slaveDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+		<property name="driverClass" value="com.mysql.jdbc.Driver" />
+		<property name="jdbcUrl" value="jdbc:mysql://${console.db.slave.ip}:${console.db.slave.port}/${console.db.name}?useUnicode=true&amp;characterEncoding=UTF-8" />
+		<property name="user" value="${console.db.uesr}" />
+		<property name="password" value="${console.db.password}" />
+		
+		<property name="minPoolSize" value="20" />
+    <property name="maxPoolSize" value="300" />  
+    <property name="initialPoolSize" value="20" />
+    <property name="maxIdleTime" value="25000" />
+    <property name="acquireIncrement" value="10" />
+   
+    <property name="acquireRetryAttempts" value="30" />
+    <property name="acquireRetryDelay" value="1000" />
+    <property name="testConnectionOnCheckin" value="true" />
+    <property name="idleConnectionTestPeriod" value="3" />
+    <property name="checkoutTimeout" value="5000"/>
+	</bean>
+	
+	<bean id="dataSource" class="org.fl.noodlecall.console.datasource.MultipleRoutingDataSource">
+		<property name="targetDataSources">
+			<map>
+				<entry key="master" value-ref="masterDataSource" />
+				<entry key="slave" value-ref="slaveDataSource" />
+			</map>
+		</property>
+		<property name="defaultTargetDataSource" ref="masterDataSource" />
+	</bean>
+	
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.format_sql">false</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.cache.use_second_level_cache">true</prop>
+				<prop key="hibernate.jdbc.batch_size">25</prop>
+				<prop key="javax.persistence.validation.mode">none</prop> 
+			</props>
+		</property>
+		<property name="eventListeners">
+			<map>
+				<entry key="merge">
+					<bean class="org.springframework.orm.hibernate3.support.IdTransferringMergeEventListener" />
+				</entry>
+			</map>
+		</property>
+		<property name="packagesToScan">
+			<list>
+				<value>org.fl.noodlecall.console.domain</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<aop:aspectj-autoproxy />
+	
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="*" 		read-only="true" />
+			<tx:method name="insert*" 	propagation="REQUIRED" rollback-for="java.lang.Exception,java.lang.RuntimeException" isolation="READ_COMMITTED"/>
+			<tx:method name="update*" 	propagation="REQUIRED" rollback-for="java.lang.Exception,java.lang.RuntimeException" isolation="READ_COMMITTED"/>
+			<tx:method name="delete*" 	propagation="REQUIRED" rollback-for="java.lang.Exception,java.lang.RuntimeException" isolation="READ_COMMITTED"/>
+			<tx:method name="save*" 	propagation="REQUIRED" rollback-for="java.lang.Exception,java.lang.RuntimeException" isolation="READ_COMMITTED"/>
+		</tx:attributes>
+	</tx:advice>
+	<aop:config>
+		<aop:pointcut id="serviceMethods" expression="execution(* org.fl.noodlecall..*ServiceImpl*.*(..))" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethods" />
+	</aop:config>
+	
+	<bean id="hibernateTemplate"  class="org.springframework.orm.hibernate3.HibernateTemplate" scope="prototype">
+        <property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="dynamicSqlTemplate" class="org.fl.noodlecall.console.persistence.sql.DynamicSqlTemplateImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+		<property name="isRefresh" value="false" />
+		<property name="pageSize" value="10" />
+		<property name="fileNameList">
+			<list>
+				<value>classpath:org/fl/noodlecall/console/sql/sql-*.xml</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="jdbcTemplate" class="org.fl.noodlecall.console.template.FailoverJdbcTemplate">   
+         <property name="dataSource" ref="dataSource"/>   
+    </bean>
+    
+    <bean id="failoverMethodInterceptor" class="org.fl.noodlecall.console.aop.advice.FailoverMethodInterceptor" />
+	
+	<bean id="serviceProxyCreator" class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property name="interceptorNames">
+			<list>
+				<value>failoverMethodInterceptor</value>
+			</list>
+		</property>
+		<property name="beanNames">
+			<value>*Service</value>
+		</property>
+	</bean>
+	
+	<bean id="loadBalancerManager" class="org.fl.noodlecall.console.loadbalancer.LoadBalancerManagerImpl"
+		init-method="start">
+		<property name="initDataSourceMap">
+			<map>
+				<entry key="master" value-ref="masterDataSource" />
+				<entry key="slave" value-ref="slaveDataSource" />
+			</map>
+		</property>
+		<property name="totalFailureCount" value="6" />
+		<property name="totalRiseCount" value="200" />
+		<property name="interTime" value="6000" />
+	</bean>
+	
+  <bean id="jumpToMaster" class="org.fl.noodlecall.console.web.jump.JumpToMaster">
+		<property name="port" value="${console.web.actual.port}" />
+		<property name="url" value="${console.callback.url}" />
+	</bean>
+	
+</beans>

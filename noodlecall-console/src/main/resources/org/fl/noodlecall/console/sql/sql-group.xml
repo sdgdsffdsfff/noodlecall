@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dynamic-hibernate>
+	<query name="group-query-page">
+	<![CDATA[
+		SELECT 
+				group_Id,
+				group_Name,
+				manual_Status
+		FROM 	CC_GROUP
+		WHERE 	1=1
+				#if($group_Id)
+					AND group_Id = :group_Id
+				#end
+		 		#if($group_Name)
+					AND group_Name LIKE :group_Name
+				#end
+				#if($manual_Status)
+					AND manual_Status = :manual_Status
+				#end
+		ORDER BY group_Id DESC
+	]]>
+	</query>
+	
+	<query name="group-query-list">
+	<![CDATA[
+		SELECT 
+				group_Id,
+				group_Name,
+				manual_Status
+		FROM 	CC_GROUP
+		WHERE 	1=1
+				#if($group_Id)
+					AND group_Id = :group_Id
+				#end
+		 		#if($group_Name)
+					AND group_Name = :group_Name
+				#end
+				#if($manual_Status)
+					AND manual_Status = :manual_Status
+				#end
+		ORDER BY group_Id DESC
+	]]>
+	</query>
+
+</dynamic-hibernate>

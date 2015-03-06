@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dynamic-hibernate>
+	<query name="client-query-page">
+	<![CDATA[
+		SELECT 
+				client_Id,
+				client_Name,
+				manual_Status,
+				system_Status,
+				ip,
+				beat_Time,
+				service_Name,
+				group_Name
+		FROM 	CC_CLIENT
+		WHERE 	1=1
+				#if($client_Id)
+					AND client_Id = :client_Id
+				#end
+		 		#if($client_Name)
+					AND client_Name LIKE :client_Name
+				#end
+				#if($manual_Status)
+					AND manual_Status = :manual_Status
+				#end
+				#if($system_Status)
+					AND system_Status = :system_Status
+				#end
+				#if($ip)
+					AND ip LIKE :ip
+				#end
+				#if($beat_Time_Start && $beat_Time_End)
+					AND beat_Time BETWEEN :beat_Time_Start AND :beat_Time_End
+				#end
+				#if($service_Name)
+					AND service_Name LIKE :service_Name
+				#end
+				#if($group_Name)
+					AND group_Name LIKE :group_Name
+				#end
+		ORDER BY client_Id DESC
+	]]>
+	</query>
+	
+	<query name="client-query-list">
+	<![CDATA[
+		SELECT 
+				client_Id,
+				client_Name,
+				manual_Status,
+				system_Status,
+				ip,
+				beat_Time,
+				service_Name,
+				group_Name
+		FROM 	CC_CLIENT
+		WHERE 	1=1
+				#if($client_Id)
+					AND client_Id = :client_Id
+				#end
+		 		#if($client_Name)
+					AND client_Name = :client_Name
+				#end
+				#if($manual_Status)
+					AND manual_Status = :manual_Status
+				#end
+				#if($system_Status)
+					AND system_Status = :system_Status
+				#end
+				#if($ip)
+					AND ip = :ip
+				#end
+				#if($beat_Time_Start && $beat_Time_End)
+					AND beat_Time BETWEEN :beat_Time_Start AND :beat_Time_End
+				#end
+				#if($service_Name)
+					AND service_Name = :service_Name
+				#end
+				#if($group_Name)
+					AND group_Name = :group_Name
+				#end
+		ORDER BY client_Id DESC
+	]]>
+	</query>
+	
+	<query name="client-query-include-service-page">
+	<![CDATA[
+		SELECT 
+				client_Id,
+				client_Name,
+				manual_Status,
+				system_Status,
+				ip,
+				beat_Time,
+				service_Name,
+				group_Name
+		FROM 	CC_CLIENT
+		WHERE 	1=1
+				#if($client_Id)
+					AND client_Id = :client_Id
+				#end
+		 		#if($client_Name)
+					AND client_Name LIKE :client_Name
+				#end
+				#if($manual_Status)
+					AND manual_Status = :manual_Status
+				#end
+				#if($system_Status)
+					AND system_Status = :system_Status
+				#end
+				#if($ip)
+					AND ip LIKE :ip
+				#end
+				#if($beat_Time_Start && $beat_Time_End)
+					AND beat_Time BETWEEN :beat_Time_Start AND :beat_Time_End
+				#end
+				#if($service_Name)
+					AND service_Name = :service_Name
+				#end
+				#if($group_Name)
+					AND group_Name LIKE :group_Name
+				#end
+		ORDER BY client_Id
+	]]>
+	</query>
+	
+	<query name="client-query-exclude-service-page">
+	<![CDATA[
+		SELECT 
+				client_Id,
+				client_Name,
+				manual_Status,
+				system_Status,
+				ip,
+				beat_Time,
+				service_Name,
+				group_Name
+		FROM 	CC_CLIENT
+		WHERE 	1=1
+				#if($client_Id)
+					AND client_Id = :client_Id
+				#end
+		 		#if($client_Name)
+					AND client_Name LIKE :client_Name
+				#end
+				#if($manual_Status)
+					AND manual_Status = :manual_Status
+				#end
+				#if($system_Status)
+					AND system_Status = :system_Status
+				#end
+				#if($ip)
+					AND ip LIKE :ip
+				#end
+				#if($beat_Time_Start && $beat_Time_End)
+					AND beat_Time BETWEEN :beat_Time_Start AND :beat_Time_End
+				#end
+				AND service_Name IS NULL
+				#if($group_Name)
+					AND group_Name LIKE :group_Name
+				#end
+		ORDER BY client_Id
+	]]>
+	</query>
+	
+	<query name="client-query-include-group-page">
+	<![CDATA[
+		SELECT 
+				client_Id,
+				client_Name,
+				manual_Status,
+				system_Status,
+				ip,
+				beat_Time,
+				service_Name,
+				group_Name
+		FROM 	CC_CLIENT
+		WHERE 	1=1
+				#if($client_Id)
+					AND client_Id = :client_Id
+				#end
+		 		#if($client_Name)
+					AND client_Name LIKE :client_Name
+				#end
+				#if($manual_Status)
+					AND manual_Status = :manual_Status
+				#end
+				#if($system_Status)
+					AND system_Status = :system_Status
+				#end
+				#if($ip)
+					AND ip LIKE :ip
+				#end
+				#if($beat_Time_Start && $beat_Time_End)
+					AND beat_Time BETWEEN :beat_Time_Start AND :beat_Time_End
+				#end
+				#if($service_Name)
+					AND service_Name LIKE :service_Name
+				#end
+				#if($group_Name)
+					AND group_Name = :group_Name
+				#end
+		ORDER BY client_Id
+	]]>
+	</query>
+	
+	<query name="client-query-exclude-group-page">
+	<![CDATA[
+		SELECT 
+				client_Id,
+				client_Name,
+				manual_Status,
+				system_Status,
+				ip,
+				beat_Time,
+				service_Name,
+				group_Name
+		FROM 	CC_CLIENT
+		WHERE 	1=1
+				#if($client_Id)
+					AND client_Id = :client_Id
+				#end
+		 		#if($client_Name)
+					AND client_Name LIKE :client_Name
+				#end
+				#if($manual_Status)
+					AND manual_Status = :manual_Status
+				#end
+				#if($system_Status)
+					AND system_Status = :system_Status
+				#end
+				#if($ip)
+					AND ip LIKE :ip
+				#end
+				#if($beat_Time_Start && $beat_Time_End)
+					AND beat_Time BETWEEN :beat_Time_Start AND :beat_Time_End
+				#end
+				#if($service_Name)
+					AND service_Name LIKE :service_Name
+				#end
+				AND group_Name IS NULL
+		ORDER BY client_Id
+	]]>
+	</query>
+	
+	<query name="client-update-online">
+	<![CDATA[
+		UPDATE 	CC_CLIENT
+		SET 	system_Status = :system_Status
+		WHERE 	beat_Time >= :beat_Time
+	]]>
+	</query>
+	
+	<query name="client-update-offline">
+	<![CDATA[
+		UPDATE 	CC_CLIENT
+		SET 	system_Status = :system_Status
+		WHERE 	beat_Time < :beat_Time || beat_Time IS NULL
+	]]>
+	</query>
+
+</dynamic-hibernate>

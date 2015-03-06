@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dynamic-hibernate>
+	<query name="service-group-query-page">
+	<![CDATA[
+		SELECT 
+				serviceGroup_Id,
+				service_Name,
+				group_Name
+		FROM 	CC_SERVICE_GROUP
+		WHERE 	1=1
+				#if($service_Name)
+					AND service_Name LIKE :service_Name
+				#end
+		 		#if($group_Name)
+					AND group_Name LIKE :group_Name
+				#end
+		ORDER BY serviceGroup_Id DESC
+	]]>
+	</query>
+	
+	<query name="service-group-query-list">
+	<![CDATA[
+		SELECT 
+				serviceGroup_Id,
+				service_Name,
+				group_Name
+		FROM 	CC_SERVICE_GROUP
+		WHERE 	1=1
+				#if($service_Name)
+					AND service_Name = :service_Name
+				#end
+		 		#if($group_Name)
+					AND group_Name = :group_Name
+				#end
+		ORDER BY serviceGroup_Id DESC
+	]]>
+	</query>
+	
+	<query name="service-group-query-include-page">
+	<![CDATA[
+		SELECT 
+				sg.serviceGroup_Id,
+				sg.service_Name,
+				g.group_Id,
+				g.group_Name,
+				g.manual_Status
+		FROM 	CC_GROUP g
+				INNER JOIN (SELECT * FROM CC_SERVICE_GROUP WHERE service_Name = :service_Name) sg 
+				ON g.group_Name = sg.group_Name
+		WHERE 	1=1
+				#if($group_Id)
+					AND g.group_Id = :group_Id
+				#end
+				#if($group_Name)
+					AND g.group_Name LIKE :group_Name
+				#end
+		 		#if($manual_Status)
+					AND g.manual_Status = :manual_Status
+				#end
+		ORDER BY g.group_Id
+	]]>
+	</query>
+	
+	<query name="service-group-query-exclude-page">
+	<![CDATA[
+		SELECT 
+				g.group_Id,
+				g.group_Name,
+				g.manual_Status		
+		FROM 	CC_GROUP g
+		WHERE 	1=1
+				#if($group_Id)
+					AND g.group_Id = :group_Id
+				#end
+				#if($group_Name)
+					AND g.group_Name LIKE :group_Name
+				#end
+		 		#if($manual_Status)
+					AND g.manual_Status = :manual_Status
+				#end
+				AND g.group_Name NOT IN (SELECT group_Name FROM CC_SERVICE_GROUP WHERE service_Name = :service_Name)
+		ORDER BY g.group_Id
+	]]>
+	</query>
+
+</dynamic-hibernate>

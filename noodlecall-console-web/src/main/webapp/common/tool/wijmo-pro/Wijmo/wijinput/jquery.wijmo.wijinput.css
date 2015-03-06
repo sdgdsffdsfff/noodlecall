@@ -1,0 +1,198 @@
+/*
+ *
+ * Wijmo Library 3.20132.15
+ * http://wijmo.com/
+ *
+ * Copyright(c) GrapeCity, Inc.  All rights reserved.
+ * 
+ * Licensed under the Wijmo Commercial License. Also available under the GNU GPL Version 3 license.
+ * licensing@wijmo.com
+ * http://wijmo.com/widgets/license/
+ *
+ *
+ */
+
+.wijmo-wijinput {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    width: 150px;
+    /*Fixed the issue for IE7, if the input is inside the table cell with long text*/
+    *overflow:hidden;
+    _zoom:1;
+    *display:inline;
+}
+
+.wijmo-wijinput-wrapper {
+    margin-right: 0;
+    display: block;
+    padding: 5px;
+}
+
+.wijmo-wijinput-input {
+    background: none;
+    border: 0 none;
+    color: inherit;
+    outline: none;
+    margin: 0 !important;
+    line-height: normal;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+    .wijmo-wijinput-input::-ms-clear {
+        display: none;
+    }
+
+.wijmo-wijinput .wijmo-wijinput-trigger {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 16px;
+    cursor: pointer;
+    padding: 0 3px;
+    height: 100%;
+}
+
+    .wijmo-wijinput .wijmo-wijinput-trigger .ui-icon {
+        top: 50%;
+        position: relative;
+        margin-top: -8px;
+    }
+
+.ui-input-trigger-right .wijmo-wijinput-wrapper, .ui-input-spinner-right .wijmo-wijinput-wrapper {
+    padding-right: 25px;
+}
+
+.ui-input-trigger-left .wijmo-wijinput-wrapper, .ui-input-spinner-left .wijmo-wijinput-wrapper {
+    padding-left: 25px;
+}
+
+.ui-input-spinner-trigger-right .wijmo-wijinput-wrapper {
+    padding-right: 42px;
+}
+
+.ui-input-spinner-trigger-left .wijmo-wijinput-wrapper {
+    padding-left: 42px;
+}
+
+.ui-input-trigger-right .wijmo-wijinput-trigger {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.ui-input-trigger-left .wijmo-wijinput-trigger {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.ui-input-trigger-right .wijmo-wijinput-trigger {
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+}
+
+.ui-input-trigger-left .wijmo-wijinput-trigger {
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+}
+
+.wijmo-wijinput .wijmo-wijinput-spinner {
+    position: absolute;
+    right: 0;
+    top: 0px;
+    width: 17px;
+    cursor: pointer;
+    height: 100%;
+}
+
+    .wijmo-wijinput .wijmo-wijinput-spinner .ui-icon {
+        position: absolute;
+        top: 50%;
+        margin-top: -8px;
+    }
+
+.ui-input-spinner-left .wijmo-wijinput-spinner {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.wijmo-wijinput-spinup {
+    border-bottom: none;
+    display: block;
+    height: 50%;
+    width: 16px;
+    position: relative;
+}
+
+
+.wijmo-wijinput-spindown {
+    border-top: none;
+    display: block;
+    height: 50%;
+    width: 16px;
+    position: relative;
+}
+
+
+
+.ui-input-spinner-right .wijmo-wijinput-spinup {
+    border-right: none;
+    border-top: none;
+}
+
+.ui-input-spinner-right .wijmo-wijinput-spindown {
+    border-right: none;
+    border-bottom: none;
+}
+
+.ui-input-spinner-left .wijmo-wijinput-spinup {
+    border-left: none;
+    border-top: none;
+}
+
+.ui-input-spinner-left .wijmo-wijinput-spindown {
+    border-left: none;
+    border-bottom: none;
+}
+
+.wijmo-wijinput-numeric {
+    text-align: right;
+}
+
+.wijmo-wijinput-date, .wijmo-wijinput-mask {
+}
+
+.ui-input-spinner-trigger-right .wijmo-wijinput-spinner {
+    right: 23px;
+}
+
+.ui-input-spinner-trigger-right .wijmo-wijinput-spinup, .ui-input-spinner-trigger-right .wijmo-wijinput-spindown, .ui-input-spinner-trigger-right .wijmo-wijinput-trigger {
+    border-top: none;
+    border-right: none;
+}
+
+.ui-input-spinner-trigger-left .wijmo-wijinput-trigger {
+    left: 0;
+}
+
+.ui-input-spinner-trigger-left .wijmo-wijinput-spinner {
+    left: 23px;
+}
+
+.ui-input-spinner-trigger-left .wijmo-wijinput-spinup, .ui-input-spinner-trigger-left .wijmo-wijinput-spindown, .ui-input-spinner-trigger-left .wijmo-wijinput-trigger {
+    border-top: none;
+    border-left: none;
+}
+
+input.wijmo-wijinput-input::-webkit-outer-spin-button, input.wijmo-wijinput-input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    /* <-- Apparently some margin are still there even though it's hidden */
+    margin: 0; 
+}

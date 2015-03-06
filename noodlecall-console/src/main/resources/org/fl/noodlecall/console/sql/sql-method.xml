@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dynamic-hibernate>
+	<query name="method-query-page">
+	<![CDATA[
+		SELECT 
+				method_Id,
+				method_Name,
+				manual_Status,
+				cluster_Type,
+				route_Type,
+				service_Name,
+				is_Downgrade,
+				downgrade_Type,
+				return_Type,
+				avgTime_Limit_Threshold,
+				overtime_Threshold,
+				overtime_Limit_Threshold
+		FROM 	CC_METHOD
+		WHERE 	1=1
+				#if($method_Id)
+					AND method_Id = :method_Id
+				#end
+		 		#if($method_Name)
+					AND method_Name LIKE :method_Name
+				#end
+				#if($manual_Status)
+					AND manual_Status = :manual_Status
+				#end
+				#if($cluster_Type)
+					AND cluster_Type = :cluster_Type
+				#end
+				#if($route_Type)
+					AND route_Type = :route_Type
+				#end
+				#if($service_Name)
+					AND service_Name LIKE :service_Name
+				#end
+		ORDER BY method_Id DESC
+	]]>
+	</query>
+	
+	<query name="method-query-list">
+	<![CDATA[
+		SELECT 
+				method_Id,
+				method_Name,
+				manual_Status,
+				cluster_Type,
+				route_Type,
+				service_Name,
+				is_Downgrade,
+				downgrade_Type,
+				return_Type,
+				avgTime_Limit_Threshold,
+				overtime_Threshold,
+				overtime_Limit_Threshold
+		FROM 	CC_METHOD
+		WHERE 	1=1
+				#if($method_Id)
+					AND method_Id = :method_Id
+				#end
+		 		#if($method_Name)
+					AND method_Name = :method_Name
+				#end
+				#if($manual_Status)
+					AND manual_Status = :manual_Status
+				#end
+				#if($cluster_Type)
+					AND cluster_Type = :cluster_Type
+				#end
+				#if($route_Type)
+					AND route_Type = :route_Type
+				#end
+				#if($service_Name)
+					AND service_Name = :service_Name
+				#end
+		ORDER BY method_Id DESC
+	]]>
+	</query>
+
+</dynamic-hibernate>

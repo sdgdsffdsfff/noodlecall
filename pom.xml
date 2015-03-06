@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.fl.noodlecall</groupId>
+  <artifactId>noodlecall</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+
+  <name>noodlecall</name>
+  <url>http://maven.apache.org</url>
+	
+  <modules>
+    <module>assembly</module>
+    <module>noodlecall-console</module>
+    <module>noodlecall-console-web</module>
+    <module>noodlecall-console-vo</module>
+    <module>noodlecall-console-remoting</module>
+    <module>noodlecall-core-connect-api</module>
+    <module>noodlecall-core-connect-net-api</module>
+    <module>noodlecall-core-connect-net-http-api</module>
+    <module>noodlecall-core-connect-net-http-client</module>
+    <module>noodlecall-core-connect-net-http-server</module>
+    <module>noodlecall-core-connect-net-netty-client</module>
+    <module>noodlecall-core-connect-net-netty-server</module>
+    <module>noodlecall-core-connect-net-hessian-client</module>
+    <module>noodlecall-core-connect-net-hessian-server</module>
+    <module>noodlecall-core-connect-net-http-web-jetty</module>
+    <module>noodlecall-core-connect-net-http-web-servlet</module>
+    <module>noodlecall-monitor-api</module>
+	<module>noodlecall-monitor-status-console</module>
+    <module>noodlecall-monitor-status-beat</module>
+    <module>noodlecall-monitor-performance</module>
+    <module>noodlecall-core-client-net</module>
+    <module>noodlecall-core-server-net</module>
+    <module>noodlecall-util</module>
+	<module>noodlecall-test</module>
+    <module>noodlecall-core-connect-net-register</module>
+    <module>noodlecall-demo-client</module>
+    <module>noodlecall-demo-server</module>
+    <module>noodlecall-core-connect-expand-api</module>
+  </modules>
+
+  <properties>
+  	
+  	<noodlecall.name>noodlecall</noodlecall.name>
+  	<noodlecall.version>1.0.0</noodlecall.version>
+  	
+  	<noodlecall.assembly.version>1.0.0</noodlecall.assembly.version>
+  	<noodlecall.console.version>1.0.0</noodlecall.console.version>
+  	<noodlecall.console.web.version>1.0.0</noodlecall.console.web.version>
+  	<noodlecall.console.vo.version>1.0.0</noodlecall.console.vo.version>
+  	<noodlecall.console.remoting.version>1.0.0</noodlecall.console.remoting.version>
+  	<noodlecall.core.connect.api.version>1.0.0</noodlecall.core.connect.api.version>
+  	<noodlecall.core.connect.expand.api.version>1.0.0</noodlecall.core.connect.expand.api.version>
+  	<noodlecall.core.connect.net.api.version>1.0.0</noodlecall.core.connect.net.api.version>
+  	<noodlecall.core.connect.net.http.api.version>1.0.0</noodlecall.core.connect.net.http.api.version>
+  	<noodlecall.core.connect.net.http.client.version>1.0.0</noodlecall.core.connect.net.http.client.version>
+  	<noodlecall.core.connect.net.http.server.version>1.0.0</noodlecall.core.connect.net.http.server.version>
+  	<noodlecall.core.connect.net.netty.client.version>1.0.0</noodlecall.core.connect.net.netty.client.version>
+  	<noodlecall.core.connect.net.netty.server.version>1.0.0</noodlecall.core.connect.net.netty.server.version>
+  	<noodlecall.core.connect.net.hessian.client.version>1.0.0</noodlecall.core.connect.net.hessian.client.version>
+  	<noodlecall.core.connect.net.hessian.server.version>1.0.0</noodlecall.core.connect.net.hessian.server.version>
+  	<noodlecall.core.connect.net.http.web.jetty.version>1.0.0</noodlecall.core.connect.net.http.web.jetty.version>
+  	<noodlecall.core.connect.net.http.web.servlet.version>1.0.0</noodlecall.core.connect.net.http.web.servlet.version>
+	<noodlecall.core.connect.net.register.version>1.0.0</noodlecall.core.connect.net.register.version>
+  	<noodlecall.monitor.api.version>1.0.0</noodlecall.monitor.api.version>
+  	<noodlecall.monitor.statust.beat.version>1.0.0</noodlecall.monitor.statust.beat.version>
+  	<noodlecall.monitor.statust.console.version>1.0.0</noodlecall.monitor.statust.console.version>
+  	<noodlecall.monitor.performance.version>1.0.0</noodlecall.monitor.performance.version>
+  	<noodlecall.core.client.net.version>1.0.0</noodlecall.core.client.net.version>
+  	<noodlecall.core.server.net.version>1.0.0</noodlecall.core.server.net.version>
+	<noodlecall.demo.client.version>1.0.0</noodlecall.demo.client.version>
+	<noodlecall.demo.server.version>1.0.0</noodlecall.demo.server.version>
+	<noodlecall.test.version>1.0.0</noodlecall.test.version>
+	<noodlecall.util.version>1.0.0</noodlecall.util.version>
+  	
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    
+  </properties>
+  
+	<dependencyManagement>
+	  <dependencies>
+	  	
+	    <dependency>
+	      <groupId>junit</groupId>
+	      <artifactId>junit</artifactId>
+	      <version>4.8.1</version>
+	      <scope>test</scope>
+	    </dependency>
+	    
+	    <!-- spring framework -->
+	    <dependency>
+	    	<groupId>org.springframework</groupId>
+	    	<artifactId>spring-context</artifactId>
+	    	<version>3.1.0.RELEASE</version>
+	    </dependency>
+	    <dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context-support</artifactId>
+				<version>3.1.0.RELEASE</version>
+			</dependency>
+	    <dependency>
+	    	<groupId>org.springframework</groupId>
+	    	<artifactId>spring-orm</artifactId>
+	    	<version>3.1.0.RELEASE</version>
+	    </dependency>
+	    <dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>3.1.0.RELEASE</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>3.1.0.RELEASE</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-test</artifactId>
+				<version>3.1.0.RELEASE</version>
+				<scope>test</scope>
+			</dependency>
+    	<dependency>
+	    	<groupId>org.aspectj</groupId>
+	    	<artifactId>aspectjweaver</artifactId>
+	    	<version>1.6.6</version>
+	    </dependency>
+			
+			<!-- log -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>1.7.5</version>
+			</dependency>
+			<dependency>   
+				<groupId>ch.qos.logback</groupId>  
+				<artifactId>logback-classic</artifactId>  
+				<version>1.0.13</version>
+			</dependency>
+			<dependency>  
+			  <groupId>org.slf4j</groupId>  
+			  <artifactId>jcl-over-slf4j</artifactId>  
+			  <version>1.7.5</version>  
+			</dependency>
+			<dependency>
+				<groupId>org.logback-extensions</groupId>
+				<artifactId>logback-ext-spring</artifactId>
+				<version>0.1.1</version>
+			</dependency>
+			
+			<!-- DataSource -->
+	    <dependency>
+				<groupId>c3p0</groupId>
+				<artifactId>c3p0</artifactId>
+				<version>0.9.1.2</version>
+			</dependency>
+			
+			<!-- Mysql Java Connector -->
+			<dependency>
+	    	<groupId>mysql</groupId>
+	    	<artifactId>mysql-connector-java</artifactId>
+	    	<version>5.1.5</version>
+	    	<scope>runtime</scope>
+	    </dependency>
+	    
+	    <!-- Hibernate -->
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-core</artifactId>
+				<version>3.6.3.Final</version>
+				<exclusions>
+					<exclusion>
+						<groupId>commons-collections</groupId>
+						<artifactId>commons-collections</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-orm</artifactId>
+				<version>3.1.0.RELEASE</version>
+			</dependency>
+			<dependency>
+	    	<groupId>javassist</groupId>
+	    	<artifactId>javassist</artifactId>
+	    	<version>3.1</version>
+	    </dependency>
+			
+			<!-- DynamicSqlTemplate -->
+			<dependency>
+	    	<groupId>avalon</groupId>
+	    	<artifactId>avalon-framework</artifactId>
+	    	<version>4.1.4</version>
+	    </dependency>
+	    <dependency>
+	    	<groupId>org.apache.velocity</groupId>
+	    	<artifactId>velocity</artifactId>
+	    	<version>1.6.4</version>
+	    </dependency>
+	    
+	    <!-- mvc -->
+    	<dependency>
+				<groupId>org.apache.tomcat</groupId>
+				<artifactId>servlet-api</artifactId>
+				<version>6.0.32</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>jstl</artifactId>
+				<version>1.2</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>3.1.0.RELEASE</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>3.1.0.RELEASE</version>
+			</dependency>
+			<dependency>
+				<groupId>taglibs</groupId>
+				<artifactId>standard</artifactId>
+				<version>1.1.2</version>
+			</dependency>
+			
+			<!-- PropertyUtils -->
+			<dependency>
+				<groupId>commons-beanutils</groupId>
+				<artifactId>commons-beanutils</artifactId>
+				<version>1.8.3</version>
+    	</dependency>
+    	
+    	<dependency>
+	    	<groupId>net.sf.flexjson</groupId>
+	    	<artifactId>flexjson</artifactId>
+	    	<version>2.1</version>
+    	</dependency>
+    	
+    	<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>1.1.26</version>
+			</dependency>
+
+			<!-- Quartz -->
+			<dependency>
+			  <groupId>org.quartz-scheduler</groupId>
+			  <artifactId>quartz</artifactId>
+			  <version>2.2.1</version>
+			</dependency>
+			
+			<!-- jetty -->
+			<dependency>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-servlet</artifactId>
+				<version>8.1.11.v20130520</version>
+			</dependency>
+			
+			<!-- mail -->
+			<dependency>
+				<groupId>javax.mail</groupId>
+				<artifactId>mail</artifactId>
+				<version>1.4.7</version>
+			</dependency>
+			
+			<!-- servlet -->
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>javax.servlet-api</artifactId>
+				<version>3.0.1</version>
+			</dependency>
+			
+			<!-- hessian -->
+			<dependency>
+				<groupId>com.caucho</groupId>
+				<artifactId>hessian</artifactId>
+				<version>4.0.7</version>
+			</dependency>
+			
+			<!-- commons pool -->
+			<dependency>
+			  <groupId>commons-pool</groupId>
+			  <artifactId>commons-pool</artifactId>
+			  <version>1.5.5</version>
+			</dependency>
+			
+			<!-- Netty -->
+			<dependency>
+				<groupId>io.netty</groupId>
+				<artifactId>netty</artifactId>
+				<version>3.6.6.Final</version>
+			</dependency>
+			
+			<!-- Jedis -->
+			<dependency>
+				<groupId>redis.clients</groupId>
+				<artifactId>jedis</artifactId>
+				<version>2.0.0</version>
+			</dependency>
+			
+	  </dependencies>
+	</dependencyManagement>
+	
+	<build>
+    <plugins>
+      <plugin>
+	      <groupId>org.apache.maven.plugins</groupId>
+	      <artifactId>maven-source-plugin</artifactId>
+	      <executions>
+	        <execution>
+	          <phase>package</phase>
+	          <goals>
+	            <goal>jar</goal>
+	          </goals>
+	        </execution>
+	      </executions>
+	    </plugin>
+    </plugins>
+  </build>
+  
+  <profiles>
+		<profile>
+			<id>dev</id>
+			<build>
+				<filters>
+					<filter>${user.dir}/assembly/src/profile/env.properties.dev</filter>
+				</filters>
+			</build>
+		</profile>
+		<profile>
+			<id>test</id>
+			<build>
+				<filters>
+					<filter>${user.dir}/assembly/src/profile/env.properties.test</filter>
+				</filters>
+			</build>
+		</profile>
+		<profile>
+			<id>image</id>
+			<build>
+				<filters>
+					<filter>${user.dir}/assembly/src/profile/env.properties.image</filter>
+				</filters>
+			</build>
+		</profile>
+		<profile>
+			<id>product</id>
+			<build>
+				<filters>
+					<filter>${user.dir}/assembly/src/profile/env.properties.product</filter>
+				</filters>
+			</build>
+    </profile>
+	</profiles>
+	
+	<repositories>
+		<repository>
+			<id>repo</id>
+			<url>http://10.168.0.49:8081/nexus/content/groups/public/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+  </repositories>
+  
+  <distributionManagement>
+		<!-- 
+		<repository>
+    	<id>thirdparty</id>
+    	<url>http://10.9.210.121:8081/nexus/content/repositories/thirdparty</url>
+  	</repository>
+  	-->
+  	
+  	<!-- 
+	  <repository>
+	    <id>releases</id>
+	    <url>http://10.9.210.121:8081/nexus/content/repositories/releases</url>
+	  </repository>
+	  -->
+	  
+	  <!--
+	  <repository>
+	    <id>releases</id>
+	    <url>http://localhost:8081/nexus/content/repositories/releases</url>
+	  </repository>
+	  -->
+	  
+	  <!--
+	  <snapshotRepository>
+    	<id>snapshots</id>
+    	<url>http://localhost:8081/nexus/content/repositories/snapshots</url>
+  	</snapshotRepository> 
+  	-->
+  	
+  	<!--
+  	<repository>
+    	<id>thirdparty</id>
+    	<url>http://localhost:8081/nexus/content/repositories/thirdparty</url>
+  	</repository>
+  	-->
+  	
+	</distributionManagement>
+
+</project>

@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dynamic-hibernate>
+	<query name="server-query-page">
+	<![CDATA[
+		SELECT 
+				server_Id,
+				server_Name,
+				manual_Status,
+				system_Status,
+				ip,
+				port,
+				url,
+				server_Type,
+				serialize_Type,
+				weight,
+				beat_Time,
+				service_Name,
+				group_Name
+		FROM 	CC_SERVER
+		WHERE 	1=1
+				#if($server_Id)
+					AND server_Id = :server_Id
+				#end
+		 		#if($server_Name)
+					AND server_Name LIKE :server_Name
+				#end
+				#if($manual_Status)
+					AND manual_Status = :manual_Status
+				#end
+				#if($system_Status)
+					AND system_Status = :system_Status
+				#end
+				#if($ip)
+					AND ip LIKE :ip
+				#end
+				#if($port)
+					AND port = :port
+				#end
+				#if($url)
+					AND url LIKE :url
+				#end
+				#if($server_Type)
+					AND server_Type = :server_Type
+				#end
+				#if($serialize_Type)
+					AND serialize_Type = :serialize_Type
+				#end
+				#if($beat_Time_Start && $beat_Time_End)
+					AND beat_Time BETWEEN :beat_Time_Start AND :beat_Time_End
+				#end
+				#if($service_Name)
+					AND service_Name LIKE :service_Name
+				#end
+				#if($group_Name)
+					AND group_Name LIKE :group_Name
+				#end
+		ORDER BY server_Id DESC
+	]]>
+	</query>
+	
+	<query name="server-query-list">
+	<![CDATA[
+		SELECT 
+				server_Id,
+				server_Name,
+				manual_Status,
+				system_Status,
+				ip,
+				port,
+				url,
+				server_Type,
+				serialize_Type,
+				weight,
+				beat_Time,
+				service_Name,
+				group_Name
+		FROM 	CC_SERVER
+		WHERE 	1=1
+				#if($server_Id)
+					AND server_Id = :server_Id
+				#end
+		 		#if($server_Name)
+					AND server_Name = :server_Name
+				#end
+				#if($manual_Status)
+					AND manual_Status = :manual_Status
+				#end
+				#if($system_Status)
+					AND system_Status = :system_Status
+				#end
+				#if($ip)
+					AND ip = :ip
+				#end
+				#if($port)
+					AND port = :port
+				#end
+				#if($url)
+					AND url = :url
+				#end
+				#if($server_Type)
+					AND server_Type = :server_Type
+				#end
+				#if($serialize_Type)
+					AND serialize_Type = :serialize_Type
+				#end
+				#if($beat_Time_Start && $beat_Time_End)
+					AND beat_Time BETWEEN :beat_Time_Start AND :beat_Time_End
+				#end
+				#if($service_Name)
+					AND service_Name = :service_Name
+				#end
+				#if($group_Name)
+					AND group_Name = :group_Name
+				#end
+		ORDER BY server_Id DESC
+	]]>
+	</query>
+
+	<query name="server-query-include-service-page">
+	<![CDATA[
+		SELECT 
+				server_Id,
+				server_Name,
+				manual_Status,
+				system_Status,
+				ip,
+				port,
+				url,
+				server_Type,
+				serialize_Type,
+				weight,
+				beat_Time,
+				service_Name,
+				group_Name
+		FROM 	CC_SERVER
+		WHERE 	1=1
+				#if($server_Id)
+					AND server_Id = :server_Id
+				#end
+		 		#if($server_Name)
+					AND server_Name LIKE :server_Name
+				#end
+				#if($manual_Status)
+					AND manual_Status = :manual_Status
+				#end
+				#if($system_Status)
+					AND system_Status = :system_Status
+				#end
+				#if($ip)
+					AND ip LIKE :ip
+				#end
+				#if($port)
+					AND port = :port
+				#end
+				#if($url)
+					AND url LIKE :url
+				#end
+				#if($server_Type)
+					AND server_Type = :server_Type
+				#end
+				#if($serialize_Type)
+					AND serialize_Type = :serialize_Type
+				#end
+				#if($beat_Time_Start && $beat_Time_End)
+					AND beat_Time BETWEEN :beat_Time_Start AND :beat_Time_End
+				#end
+				#if($service_Name)
+					AND service_Name = :service_Name
+				#end
+				#if($group_Name)
+					AND group_Name LIKE :group_Name
+				#end
+		ORDER BY server_Id
+	]]>
+	</query>
+	
+	<query name="server-query-exclude-service-page">
+	<![CDATA[
+		SELECT 
+				server_Id,
+				server_Name,
+				manual_Status,
+				system_Status,
+				ip,
+				port,
+				url,
+				server_Type,
+				serialize_Type,
+				weight,
+				beat_Time,
+				service_Name,
+				group_Name
+		FROM 	CC_SERVER
+		WHERE 	1=1
+				#if($server_Id)
+					AND server_Id = :server_Id
+				#end
+		 		#if($server_Name)
+					AND server_Name LIKE :server_Name
+				#end
+				#if($manual_Status)
+					AND manual_Status = :manual_Status
+				#end
+				#if($system_Status)
+					AND system_Status = :system_Status
+				#end
+				#if($ip)
+					AND ip LIKE :ip
+				#end
+				#if($port)
+					AND port = :port
+				#end
+				#if($url)
+					AND url LIKE :url
+				#end
+				#if($server_Type)
+					AND server_Type = :server_Type
+				#end
+				#if($serialize_Type)
+					AND serialize_Type = :serialize_Type
+				#end
+				#if($beat_Time_Start && $beat_Time_End)
+					AND beat_Time BETWEEN :beat_Time_Start AND :beat_Time_End
+				#end
+				AND service_Name IS NULL
+				#if($group_Name)
+					AND group_Name LIKE :group_Name
+				#end
+		ORDER BY server_Id
+	]]>
+	</query>
+	
+	<query name="server-query-include-group-page">
+	<![CDATA[
+		SELECT 
+				server_Id,
+				server_Name,
+				manual_Status,
+				system_Status,
+				ip,
+				port,
+				url,
+				server_Type,
+				serialize_Type,
+				weight,
+				beat_Time,
+				service_Name,
+				group_Name
+		FROM 	CC_SERVER
+		WHERE 	1=1
+				#if($server_Id)
+					AND server_Id = :server_Id
+				#end
+		 		#if($server_Name)
+					AND server_Name LIKE :server_Name
+				#end
+				#if($manual_Status)
+					AND manual_Status = :manual_Status
+				#end
+				#if($system_Status)
+					AND system_Status = :system_Status
+				#end
+				#if($ip)
+					AND ip LIKE :ip
+				#end
+				#if($port)
+					AND port = :port
+				#end
+				#if($url)
+					AND url LIKE :url
+				#end
+				#if($server_Type)
+					AND server_Type = :server_Type
+				#end
+				#if($serialize_Type)
+					AND serialize_Type = :serialize_Type
+				#end
+				#if($beat_Time_Start && $beat_Time_End)
+					AND beat_Time BETWEEN :beat_Time_Start AND :beat_Time_End
+				#end
+				#if($service_Name)
+					AND service_Name LIKE :service_Name
+				#end
+				#if($group_Name)
+					AND group_Name = :group_Name
+				#end
+		ORDER BY server_Id
+	]]>
+	</query>
+	
+	<query name="server-query-exclude-group-page">
+	<![CDATA[
+		SELECT 
+				server_Id,
+				server_Name,
+				manual_Status,
+				system_Status,
+				ip,
+				port,
+				url,
+				server_Type,
+				serialize_Type,
+				weight,
+				beat_Time,
+				service_Name,
+				group_Name
+		FROM 	CC_SERVER
+		WHERE 	1=1
+				#if($server_Id)
+					AND server_Id = :server_Id
+				#end
+		 		#if($server_Name)
+					AND server_Name LIKE :server_Name
+				#end
+				#if($manual_Status)
+					AND manual_Status = :manual_Status
+				#end
+				#if($system_Status)
+					AND system_Status = :system_Status
+				#end
+				#if($ip)
+					AND ip LIKE :ip
+				#end
+				#if($port)
+					AND port = :port
+				#end
+				#if($url)
+					AND url LIKE :url
+				#end
+				#if($server_Type)
+					AND server_Type = :server_Type
+				#end
+				#if($serialize_Type)
+					AND serialize_Type = :serialize_Type
+				#end
+				#if($beat_Time_Start && $beat_Time_End)
+					AND beat_Time BETWEEN :beat_Time_Start AND :beat_Time_End
+				#end
+				#if($service_Name)
+					AND service_Name LIKE :service_Name
+				#end
+				AND group_Name IS NULL
+		ORDER BY server_Id
+	]]>
+	</query>
+
+	<query name="server-query-online-list">
+	<![CDATA[
+		SELECT 
+				server_Id,
+				server_Name,
+				manual_Status,
+				system_Status,
+				ip,
+				port,
+				url,
+				server_Type,
+				serialize_Type,
+				weight,
+				beat_Time,
+				service_Name,
+				group_Name
+		FROM 	CC_SERVER
+		WHERE 	beat_Time >= :beat_Time AND system_Status = :system_Status
+		ORDER BY server_Id
+	]]>
+	</query>
+	
+	<query name="server-query-offline-list">
+	<![CDATA[
+		SELECT 
+				server_Id,
+				server_Name,
+				manual_Status,
+				system_Status,
+				ip,
+				port,
+				url,
+				server_Type,
+				serialize_Type,
+				weight,
+				beat_Time,
+				service_Name,
+				group_Name
+		FROM 	CC_SERVER
+		WHERE 	(beat_Time < :beat_Time || beat_Time IS NULL) AND system_Status = :system_Status
+		ORDER BY server_Id
+	]]>
+	</query>
+
+</dynamic-hibernate>

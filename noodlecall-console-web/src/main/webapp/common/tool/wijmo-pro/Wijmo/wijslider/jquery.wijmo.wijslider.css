@@ -1,0 +1,69 @@
+/*
+ *
+ * Wijmo Library 3.20132.15
+ * http://wijmo.com/
+ *
+ * Copyright(c) GrapeCity, Inc.  All rights reserved.
+ * 
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * licensing@wijmo.com
+ * http://wijmo.com/widgets/license/
+ *
+ */
+  /* WijSlider  horizontal
+----------------------------------*/
+.wijmo-wijslider-horizontal
+{
+	position: relative;
+	-ms-touch-action: none; /* Disable default touch event in IE */
+}     
+        
+.wijmo-wijslider-horizontal .wijmo-wijslider-track
+{
+    
+}
+        
+.wijmo-wijslider-horizontal .wijmo-wijslider-decbutton
+{
+    position: absolute;
+    left: 0px;
+    right: auto;
+    cursor:pointer;
+}
+
+.wijmo-wijslider-horizontal .wijmo-wijslider-incbutton
+{
+    position: absolute;
+    left: auto;
+    right: 0px;
+    cursor:pointer;
+}
+
+  /* WijSlider  vertical
+----------------------------------*/
+.wijmo-wijslider-vertical
+{
+	position: relative;
+	-ms-touch-action: none; /* Disable default touch event in IE */
+}     
+        
+.wijmo-wijslider-vertical .wijmo-wijslider-track
+{
+    
+}
+        
+.wijmo-wijslider-vertical .wijmo-wijslider-decbutton
+{
+    position: absolute;
+    top: 0px;
+    bottom: auto;
+    cursor:pointer;
+}
+
+.wijmo-wijslider-vertical .wijmo-wijslider-incbutton
+{
+    position: absolute;
+    top: auto;
+    bottom: 0px;
+    cursor:pointer;
+}

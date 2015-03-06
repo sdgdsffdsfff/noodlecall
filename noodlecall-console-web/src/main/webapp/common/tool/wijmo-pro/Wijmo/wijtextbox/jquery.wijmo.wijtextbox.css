@@ -1,0 +1,20 @@
+/*
+ *
+ * Wijmo Library 3.20132.15
+ * http://wijmo.com/
+ *
+ * Copyright(c) GrapeCity, Inc.  All rights reserved.
+ * 
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * licensing@wijmo.com
+ * http://wijmo.com/widgets/license/
+ *
+ */
+
+.wijmo-wijtextbox
+{
+	outline:none;
+	margin: 0;
+	padding:5px;
+}
+

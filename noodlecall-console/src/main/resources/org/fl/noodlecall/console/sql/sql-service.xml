@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dynamic-hibernate>
+	<query name="service-query-page">
+	<![CDATA[
+		SELECT 
+				service_Id,
+				service_Name,
+				manual_Status,
+				inteface_Name,
+				cluster_Type,
+				route_Type	
+		FROM 	CC_SERVICE
+		WHERE 	1=1
+				#if($service_Id)
+					AND service_Id = :service_Id
+				#end
+		 		#if($service_Name)
+					AND service_Name LIKE :service_Name
+				#end
+				#if($manual_Status)
+					AND manual_Status = :manual_Status
+				#end
+				#if($inteface_Name)
+					AND inteface_Name LIKE :inteface_Name
+				#end
+				#if($cluster_Type)
+					AND cluster_Type = :cluster_Type
+				#end
+				#if($route_Type)
+					AND route_Type = :route_Type
+				#end
+		ORDER BY service_Id DESC
+	]]>
+	</query>
+	
+	<query name="service-query-list">
+	<![CDATA[
+		SELECT 
+				service_Id,
+				service_Name,
+				manual_Status,
+				inteface_Name,
+				cluster_Type,
+				route_Type	
+		FROM 	CC_SERVICE
+		WHERE 	1=1
+				#if($service_Id)
+					AND service_Id = :service_Id
+				#end
+		 		#if($service_Name)
+					AND service_Name = :service_Name
+				#end
+				#if($manual_Status)
+					AND manual_Status = :manual_Status
+				#end
+				#if($inteface_Name)
+					AND inteface_Name = :inteface_Name
+				#end
+				#if($cluster_Type)
+					AND cluster_Type = :cluster_Type
+				#end
+				#if($route_Type)
+					AND route_Type = :route_Type
+				#end
+		ORDER BY service_Id DESC
+	]]>
+	</query>
+
+</dynamic-hibernate>

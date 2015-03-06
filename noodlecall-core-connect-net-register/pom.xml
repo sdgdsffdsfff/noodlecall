@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+    <groupId>org.fl.noodlecall</groupId>
+    <artifactId>noodlecall</artifactId>
+    <version>1.0.0</version>
+  </parent>
+  
+  <groupId>org.fl.noodlecall.core.connect.net.register</groupId>
+  <artifactId>noodlecall-core-connect-net-register</artifactId>
+  <version>1.0.0</version>
+  <name>noodlecall-core-connect-net-register</name>
+  <url>http://maven.apache.org</url>
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+  <dependencies>
+  
+  	<dependency>
+      	<groupId>org.fl.noodlecall.core.connect</groupId>
+  		<artifactId>noodlecall-core-connect-api</artifactId>
+  		<version>${noodlecall.core.connect.api.version}</version>
+    </dependency>
+  	
+  	<dependency>
+      	<groupId>org.fl.noodlecall.core.connect.net</groupId>
+  		<artifactId>noodlecall-core-connect-net-api</artifactId>
+  		<version>${noodlecall.core.connect.net.api.version}</version>
+    </dependency>
+  	
+  	<dependency>
+		<groupId>org.fl.noodlecall.console.remoting</groupId>
+  		<artifactId>noodlecall-console-remoting</artifactId>
+		<version>${noodlecall.console.remoting.version}</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.fl.noodlecall.test</groupId>
+		<artifactId>noodlecall-test</artifactId>
+		<version>${noodlecall.test.version}</version>
+		<scope>test</scope>
+	</dependency>
+  
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    
+    <!-- spring framework -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context</artifactId>
+		<scope>test</scope>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context-support</artifactId>
+		<scope>test</scope>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-test</artifactId>
+		<scope>test</scope>
+	</dependency>
+    
+  </dependencies>
+  
+</project>
