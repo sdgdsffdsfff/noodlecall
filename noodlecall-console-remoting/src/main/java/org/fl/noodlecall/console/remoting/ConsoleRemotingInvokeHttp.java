@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.fl.noodle.common.net.http.HttpConnect;
+import org.fl.noodle.common.net.http.jdk.HttpConnectJdk;
 import org.fl.noodlecall.console.vo.ClientVo;
 import org.fl.noodlecall.console.vo.MethodVo;
 import org.fl.noodlecall.console.vo.ServerVo;
 import org.fl.noodlecall.console.vo.ServiceVo;
-import org.fl.noodlecall.util.tools.HttpConnect;
+
 
 public class ConsoleRemotingInvokeHttp implements ConsoleRemotingInvoke {
 
@@ -139,13 +141,13 @@ public class ConsoleRemotingInvokeHttp implements ConsoleRemotingInvoke {
 	}
 	
 	private <T> T request(String url, Object object, Class<T> clazz) throws Exception {		
-		HttpConnect httpConnect = new HttpConnect(consoleUrl + url, connectTimeout, readTimeout, encoding);
-		return httpConnect.send("input", object, clazz);
+		HttpConnect httpConnect = new HttpConnectJdk(consoleUrl + url, connectTimeout, readTimeout, encoding);
+		return httpConnect.post("input", object, clazz);
 	}
 	
 	private <T> T requests(String url, String[] names, Object[] objects, Class<T> clazz) throws Exception {		
-		HttpConnect httpConnect = new HttpConnect(consoleUrl + url, connectTimeout, readTimeout, encoding);
-		return httpConnect.sends(names, objects, clazz);
+		HttpConnect httpConnect = new HttpConnectJdk(consoleUrl + url, connectTimeout, readTimeout, encoding);
+		return httpConnect.posts(names, objects, clazz);
 	}
 	
 	public void setConsoleUrl(String consoleUrl) {

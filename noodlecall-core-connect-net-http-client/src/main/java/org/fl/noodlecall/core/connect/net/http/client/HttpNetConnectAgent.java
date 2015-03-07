@@ -4,7 +4,8 @@ import java.io.IOException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+import org.fl.noodle.common.net.http.HttpConnect;
+import org.fl.noodle.common.net.http.jdk.HttpConnectJdk;
 import org.fl.noodlecall.core.connect.distinguish.ConnectDistinguish;
 import org.fl.noodlecall.core.connect.exception.ConnectRefusedException;
 import org.fl.noodlecall.core.connect.exception.ConnectResetException;
@@ -17,7 +18,6 @@ import org.fl.noodlecall.core.connect.net.constent.NetConnectAgentType;
 import org.fl.noodlecall.core.connect.net.rpc.Invocation;
 import org.fl.noodlecall.core.connect.net.rpc.Invoker;
 import org.fl.noodlecall.core.connect.net.rpc.Result;
-import org.fl.noodlecall.util.tools.HttpConnect;
 
 public class HttpNetConnectAgent extends AbstractNetConnectAgent implements Invoker {
 
@@ -36,7 +36,7 @@ public class HttpNetConnectAgent extends AbstractNetConnectAgent implements Invo
 	public void connectActual() throws Exception {
 		
 		String fullUrl = new StringBuilder("http://").append(ip).append(":").append(port).append(url).toString();
-		httpConnect = new HttpConnect(fullUrl, connectTimeout, readTimeout, encoding);
+		httpConnect = new HttpConnectJdk(fullUrl, connectTimeout, readTimeout, encoding);
 		
 		try {
 			httpConnect.connect();
@@ -81,7 +81,7 @@ public class HttpNetConnectAgent extends AbstractNetConnectAgent implements Invo
 		
 		String deserializationString = null;
 		try {
-			deserializationString = httpConnect.send(inputName, serializationString);
+			deserializationString = httpConnect.postString(inputName, serializationString);
 		} catch (java.net.ConnectException e) { 
 			if (logger.isErrorEnabled()) {
 				logger.error("invoke -> httpConnect.send -> {} -> Exception:{}", this, e.getMessage());

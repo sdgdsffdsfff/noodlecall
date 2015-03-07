@@ -6,12 +6,12 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.fl.noodle.common.net.http.HttpConnect;
+import org.fl.noodle.common.net.http.jdk.HttpConnectJdk;
 import org.fl.noodlecall.console.service.ServerService;
 import org.fl.noodlecall.console.util.ConsoleConstant;
 import org.fl.noodlecall.console.vo.ServerVo;
 import org.fl.noodlecall.monitor.api.schedule.executer.AbstractExecuter;
-import org.fl.noodlecall.util.tools.HttpConnect;
 import org.fl.noodlecall.util.tools.SocketConnect;
 
 public class ConsoleServerStatusExecuter extends AbstractExecuter {
@@ -64,10 +64,10 @@ public class ConsoleServerStatusExecuter extends AbstractExecuter {
 				} else if (serverVoOnline.getServer_Type().equals(ConsoleConstant.SERVER_TYPE_JETTY) 
 							|| serverVoOnline.getServer_Type().equals(ConsoleConstant.SERVER_TYPE_SERVLET)) {
 					String fullUrl = new StringBuilder("http://").append(serverVoOnline.getIp()).append(":").append(serverVoOnline.getPort()).append(healthUrl).toString();
-					HttpConnect httpConnect = new HttpConnect(fullUrl, connectTimeout, readTimeout);
+					HttpConnect httpConnect = new HttpConnectJdk(fullUrl, connectTimeout, readTimeout);
 					for (int i=0; i<maxRetry; i++) {					
 						try {						
-							httpConnect.send(healthName, serverVoOnline.getUrl());
+							httpConnect.getString(healthName, serverVoOnline.getUrl());
 						} catch (Exception e) {
 							if (logger.isErrorEnabled()) {
 								logger.error("execute -> httpConnect.send -> {} -> Exception:{}", serverVoOnline, e.getMessage());
@@ -120,10 +120,10 @@ public class ConsoleServerStatusExecuter extends AbstractExecuter {
 				} else if (serverVoOffline.getServer_Type().equals(ConsoleConstant.SERVER_TYPE_JETTY) 
 							|| serverVoOffline.getServer_Type().equals(ConsoleConstant.SERVER_TYPE_SERVLET)) {
 					String fullUrl = new StringBuilder("http://").append(serverVoOffline.getIp()).append(":").append(serverVoOffline.getPort()).append(healthUrl).toString();
-					HttpConnect httpConnect = new HttpConnect(fullUrl, connectTimeout, readTimeout);
+					HttpConnect httpConnect = new HttpConnectJdk(fullUrl, connectTimeout, readTimeout);
 					for (int i=0; i<maxRetry; i++) {					
 						try {						
-							httpConnect.send("input", "hi");
+							httpConnect.getString("input", "hi");
 						} catch (Exception e) {
 							if (logger.isErrorEnabled()) {
 								logger.error("execute -> httpConnect.send -> {} -> Exception:{}", serverVoOffline, e.getMessage());
