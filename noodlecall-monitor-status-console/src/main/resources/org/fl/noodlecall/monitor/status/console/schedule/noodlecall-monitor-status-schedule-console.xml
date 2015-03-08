@@ -14,7 +14,7 @@
 	<import resource="classpath:org/fl/noodlecall/monitor/status/console/executer/noodlecall-monitor-status-executer-console-client.xml" />
 	<import resource="classpath:org/fl/noodlecall/monitor/status/console/executer/noodlecall-monitor-status-executer-console-server.xml" />
 	
-	<bean id="statusExecuterSchedule" class="org.fl.noodlecall.monitor.api.schedule.ExecuterSchedule"
+	<bean id="statusExecuterSchedule" class="org.fl.noodle.common.monitor.schedule.ExecuterSchedule"
 		init-method="start" destroy-method="destroy" >
 		<property name="delay" value="10" />
 		<property name="executerList">

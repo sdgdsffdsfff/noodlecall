@@ -25,13 +25,12 @@
 		<groupId>org.fl.noodle.common.connect</groupId>
 		<artifactId>noodlecommon-connect-api</artifactId>
 	</dependency>
-	
-    <dependency>
-	  	<groupId>org.fl.noodlecall.monitor.api</groupId>
-  		<artifactId>noodlecall-monitor-api</artifactId>
-  		<version>${noodlecall.monitor.api.version}</version>
-    </dependency>
-  
+ 
+	<dependency>
+		<groupId>org.fl.noodle.common.monitor.performance</groupId>
+		<artifactId>noodlecommon-monitor-performance</artifactId>
+	</dependency>
+		
   	<dependency>
 		<groupId>org.fl.noodlecall.core.connect.net.register</groupId>
 		<artifactId>noodlecall-core-connect-net-register</artifactId>

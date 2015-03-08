@@ -5,10 +5,9 @@ import java.util.Date;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.fl.noodle.common.monitor.executer.AbstractExecuter;
 import org.fl.noodlecall.console.service.ClientService;
 import org.fl.noodlecall.console.vo.ClientVo;
-import org.fl.noodlecall.monitor.api.schedule.executer.AbstractExecuter;
 
 public class ConsoleClientStatusExecuter extends AbstractExecuter {
 

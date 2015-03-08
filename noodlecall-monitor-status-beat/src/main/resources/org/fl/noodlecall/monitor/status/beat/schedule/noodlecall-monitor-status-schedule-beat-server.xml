@@ -13,7 +13,7 @@
 	
 	<import resource="classpath:org/fl/noodlecall/monitor/status/beat/executer/noodlecall-monitor-status-executer-beat-server.xml" />
 		
-	<bean id="statusServerBeatExecuterSchedule" class="org.fl.noodlecall.monitor.api.schedule.ExecuterSchedule"
+	<bean id="statusServerBeatExecuterSchedule" class="org.fl.noodle.common.monitor.schedule.ExecuterSchedule"
 		init-method="start" destroy-method="destroy" >
 		<property name="delay" value="10" />
 		<property name="initialDelay" value="10" />

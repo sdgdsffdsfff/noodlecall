@@ -13,6 +13,6 @@
 	
 	<import resource="classpath:org/fl/noodlecall/console/noodlecall-console-bean.xml" />
 	<import resource="classpath:org/fl/noodlecall/monitor/status/console/schedule/noodlecall-monitor-status-schedule-console.xml" />
-	<import resource="classpath:org/fl/noodlecall/monitor/performance/receiver/noodlecall-monitor-performance-receiver.xml" />
+	<import resource="classpath:org/fl/noodle/common/monitor/performance/receiver/callcenter-monitor-performance-receiver.xml" />
 	
 </beans>

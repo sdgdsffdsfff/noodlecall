@@ -26,10 +26,8 @@
     <module>noodlecall-core-connect-net-hessian-server</module>
     <module>noodlecall-core-connect-net-http-web-jetty</module>
     <module>noodlecall-core-connect-net-http-web-servlet</module>
-    <module>noodlecall-monitor-api</module>
 	<module>noodlecall-monitor-status-console</module>
     <module>noodlecall-monitor-status-beat</module>
-    <module>noodlecall-monitor-performance</module>
     <module>noodlecall-core-client-net</module>
     <module>noodlecall-core-server-net</module>
     <module>noodlecall-util</module>
@@ -60,10 +58,8 @@
   	<noodlecall.core.connect.net.http.web.jetty.version>1.0.0</noodlecall.core.connect.net.http.web.jetty.version>
   	<noodlecall.core.connect.net.http.web.servlet.version>1.0.0</noodlecall.core.connect.net.http.web.servlet.version>
 	<noodlecall.core.connect.net.register.version>1.0.0</noodlecall.core.connect.net.register.version>
-  	<noodlecall.monitor.api.version>1.0.0</noodlecall.monitor.api.version>
   	<noodlecall.monitor.statust.beat.version>1.0.0</noodlecall.monitor.statust.beat.version>
   	<noodlecall.monitor.statust.console.version>1.0.0</noodlecall.monitor.statust.console.version>
-  	<noodlecall.monitor.performance.version>1.0.0</noodlecall.monitor.performance.version>
   	<noodlecall.core.client.net.version>1.0.0</noodlecall.core.client.net.version>
   	<noodlecall.core.server.net.version>1.0.0</noodlecall.core.server.net.version>
 	<noodlecall.demo.client.version>1.0.0</noodlecall.demo.client.version>
@@ -129,6 +125,18 @@
 		<dependency>
 			<groupId>org.fl.noodle.common.connect.expand</groupId>
 			<artifactId>noodlecommon-connect-expand-api</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.fl.noodle.common.monitor</groupId>
+			<artifactId>noodlecommon-monitor-api</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.fl.noodle.common.monitor.performance</groupId>
+			<artifactId>noodlecommon-monitor-performance</artifactId>
 			<version>1.0.0</version>
 		</dependency>
 		

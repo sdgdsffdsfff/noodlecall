@@ -76,12 +76,6 @@
 	</dependency>
 	
 	<dependency>
-  		<groupId>org.fl.noodlecall.monitor.performance</groupId>
-  		<artifactId>noodlecall-monitor-performance</artifactId>
-		<version>${noodlecall.monitor.performance.version}</version>
-	</dependency>
-	
-	<dependency>
 		<groupId>org.fl.noodlecall.core.server.net</groupId>
   		<artifactId>noodlecall-core-server-net</artifactId>
 		<version>${noodlecall.core.server.net.version}</version>

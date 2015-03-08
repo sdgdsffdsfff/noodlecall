@@ -33,6 +33,11 @@
   		<artifactId>noodlecommon-connect-expand-api</artifactId>
 	</dependency>
  	
+	<dependency>
+		<groupId>org.fl.noodle.common.monitor.performance</groupId>
+		<artifactId>noodlecommon-monitor-performance</artifactId>
+	</dependency>
+ 	
   	<dependency>
 		<groupId>org.fl.noodlecall.console</groupId>
 		<artifactId>noodlecall-console</artifactId>
@@ -49,12 +54,6 @@
   		<groupId>org.fl.noodlecall.monitor.status.console</groupId>
 	  	<artifactId>noodlecall-monitor-status-console</artifactId>
 		<version>${noodlecall.monitor.statust.console.version}</version>
-	</dependency>
-	
-	<dependency>
-  		<groupId>org.fl.noodlecall.monitor.performance</groupId>
-  		<artifactId>noodlecall-monitor-performance</artifactId>
-		<version>${noodlecall.monitor.performance.version}</version>
 	</dependency>
   
     <dependency>
