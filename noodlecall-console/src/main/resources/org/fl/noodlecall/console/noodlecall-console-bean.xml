@@ -117,7 +117,7 @@
         <property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	
-	<bean id="dynamicSqlTemplate" class="org.fl.noodlecall.console.persistence.sql.DynamicSqlTemplateImpl">
+	<bean id="dynamicSqlTemplate" class="org.fl.noodle.common.dynamicsql.DynamicSqlTemplateImpl">
 		<property name="hibernateTemplate" ref="hibernateTemplate" />
 		<property name="isRefresh" value="true" />
 		<property name="pageSize" value="10" />

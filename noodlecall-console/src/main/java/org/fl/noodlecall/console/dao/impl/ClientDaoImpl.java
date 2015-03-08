@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import org.fl.noodlecall.console.dao.ClientDao;
 import org.fl.noodlecall.console.domain.ClientMd;
-import org.fl.noodlecall.console.persistence.sql.DynamicSqlTemplate;
+import org.fl.noodle.common.dynamicsql.DynamicSqlTemplate;
 import org.fl.noodlecall.console.util.ConsoleConstant;
 import org.fl.noodle.common.mvc.vo.PageVo;
 import org.fl.noodlecall.console.vo.ClientVo;

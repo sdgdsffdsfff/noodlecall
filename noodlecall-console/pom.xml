@@ -24,7 +24,11 @@
   	<dependency>
 		<groupId>org.fl.noodle.common.mvc.vo</groupId>
 		<artifactId>noodlecommon-mvc-vo</artifactId>
-		<version>1.0.0</version>
+	</dependency>
+  
+  	<dependency>
+		<groupId>org.fl.noodle.common.dynamicsql</groupId>
+		<artifactId>noodlecommon-dynamicsql</artifactId>
 	</dependency>
   
   	<dependency>

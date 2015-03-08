@@ -112,6 +112,12 @@
 			<version>1.0.0</version>
 		</dependency>
 		
+		<dependency>
+			<groupId>org.fl.noodle.common.dynamicsql</groupId>
+			<artifactId>noodlecommon-dynamicsql</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		
 	    <dependency>
 	      <groupId>junit</groupId>
 	      <artifactId>junit</artifactId>
