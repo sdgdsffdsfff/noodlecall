@@ -54,7 +54,7 @@
 	    <property name="checkoutTimeout" value="2000"/>
 	</bean>
 	
-	<bean id="dataSource" class="org.fl.noodlecall.console.datasource.MultipleRoutingDataSource">
+	<bean id="dataSource" class="org.fl.noodle.common.dbseparate.datasource.MultipleRoutingDataSource">
 		<property name="targetDataSources">
 			<map>
 				<entry key="master" value-ref="masterDataSource" />
@@ -128,7 +128,7 @@
 		</property>
 	</bean>
     
-    <bean id="failoverMethodInterceptor" class="org.fl.noodlecall.console.aop.advice.FailoverMethodInterceptor" />
+    <bean id="failoverMethodInterceptor" class="org.fl.noodle.common.dbseparate.aop.FailoverMethodInterceptor" />
 	
 	<bean id="serviceProxyCreator" class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
 		<property name="interceptorNames">
@@ -141,7 +141,7 @@
 		</property>
 	</bean>
 	
-	<bean id="loadBalancerManager" class="org.fl.noodlecall.console.loadbalancer.LoadBalancerManagerImpl"
+	<bean id="loadBalancerManager" class="org.fl.noodle.common.dbseparate.loadbalancer.LoadBalancerManagerImpl"
 		init-method="start">
 		<property name="initDataSourceMap">
 			<map>

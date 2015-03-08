@@ -32,6 +32,11 @@
 	</dependency>
   
   	<dependency>
+		<groupId>org.fl.noodle.common.dbseparate</groupId>
+		<artifactId>noodlecommon-dbseparate</artifactId>
+	</dependency>
+		
+  	<dependency>
 		<groupId>org.fl.noodlecall.util</groupId>
 		<artifactId>noodlecall-util</artifactId>
 		<version>${noodlecall.util.version}</version>
