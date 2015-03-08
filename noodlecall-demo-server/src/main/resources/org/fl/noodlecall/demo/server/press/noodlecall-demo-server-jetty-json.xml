@@ -17,7 +17,7 @@
 	
 	<bean id="testNetServiceImpl" class="org.fl.noodlecall.core.connect.net.TestNetServiceImpl" />
 	
-	<bean id="testNetServiceImplProxy" class="org.fl.noodlecall.press.PressToolServerSpringProxyFactory">
+	<bean id="testNetServiceImplProxy" class="org.fl.noodle.common.test.press.PressToolServerSpringProxyFactory">
 		<property name="interfaceName" value="org.fl.noodlecall.core.connect.net.TestNetService"/>
 		<property name="serviceOriginal" ref="testNetServiceImpl"/>
 		<property name="monitorInterval" value="1000"/>

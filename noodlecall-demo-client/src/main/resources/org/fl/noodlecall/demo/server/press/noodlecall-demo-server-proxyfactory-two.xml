@@ -21,7 +21,7 @@
 		<property name="groupName" value="UpdateGroup" />
     </bean>
     
-    <bean id="testNetServiceProxy" class="org.fl.noodlecall.press.PressToolClientSpringProxyFactory">
+    <bean id="testNetServiceProxy" class="org.fl.noodle.common.test.press.PressToolClientSpringProxyFactory">
 		<property name="interfaceName" value="org.fl.noodlecall.core.connect.net.TestNetService"/>
 		<property name="serviceOriginal" ref="testNetService"/>
 		<property name="planExecuteNum" value="100000"/>

@@ -21,6 +21,12 @@
   <dependencies>
   
   	<dependency>
+		<groupId>org.fl.noodle.common.test</groupId>
+		<artifactId>noodlecommon-test</artifactId>
+		<scope>test</scope>
+	</dependency>
+  
+  	<dependency>
       	<groupId>org.fl.noodlecall.core.connect.net.http</groupId>
   		<artifactId>noodlecall-core-connect-net-http-api</artifactId>
   		<version>${noodlecall.core.connect.net.http.api.version}</version>

@@ -13,7 +13,7 @@
 	
     <bean id="servletNetConnectServer" class="org.fl.noodlecall.core.connect.net.http.web.servlet.ServletNetConnectServer" />
 	
-	<bean id="testJettyServer" class="org.fl.noodlecall.core.connect.net.http.web.servlet.TestJettyServer"
+	<bean id="testJettyServer" class="org.fl.noodle.common.test.http.server.TestJettyServer"
 			init-method="start" destroy-method="destroy">
 		<property name="port" value="7270"/>
 		<property name="servletNetConnectServer" ref="servletNetConnectServer" />
