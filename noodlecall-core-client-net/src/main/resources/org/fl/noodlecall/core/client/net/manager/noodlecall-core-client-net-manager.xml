@@ -20,7 +20,7 @@
 	<import resource="classpath:org/fl/noodlecall/core/connect/net/cluster/noodlecall-core-connect-net-cluster-factory.xml" />
 	<import resource="classpath:org/fl/noodlecall/core/connect/net/serialize/noodlecall-core-connect-net-serialize-factory.xml" />
 	<import resource="classpath:org/fl/noodlecall/core/connect/net/route/noodlecall-core-connect-net-route-factory.xml" />
-	<import resource="classpath:org/fl/noodle/common/monitor/performance/schedule/noodlecall-monitor-performance-schedule.xml" />
+	<import resource="classpath:org/fl/noodle/common/monitor/performance/schedule/callcenter-monitor-performance-schedule.xml" />
  
     <bean id="connectManager" class="org.fl.noodlecall.core.client.net.manager.NetConnectManager"
     	init-method="start" destroy-method="destroy">
