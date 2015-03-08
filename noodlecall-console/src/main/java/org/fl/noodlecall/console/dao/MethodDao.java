@@ -2,7 +2,7 @@ package org.fl.noodlecall.console.dao;
 
 import java.util.List;
 
-import org.fl.noodlecall.console.util.vo.PageVo;
+import org.fl.noodle.common.mvc.vo.PageVo;
 import org.fl.noodlecall.console.vo.MethodVo;
 
 public interface MethodDao {

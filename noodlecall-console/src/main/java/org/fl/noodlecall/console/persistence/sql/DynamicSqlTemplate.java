@@ -3,7 +3,7 @@ package org.fl.noodlecall.console.persistence.sql;
 import java.util.List;
 import java.util.Map;
 
-import org.fl.noodlecall.console.util.vo.PageVo;
+import org.fl.noodle.common.mvc.vo.PageVo;
 
 public interface DynamicSqlTemplate {
 	

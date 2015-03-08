@@ -53,7 +53,7 @@ import org.springframework.util.Assert;
 
 import org.xml.sax.XMLReader;
 
-import org.fl.noodlecall.console.util.vo.PageVo;
+import org.fl.noodle.common.mvc.vo.PageVo;
 
 public class DynamicSqlTemplateImpl implements DynamicSqlTemplate, InitializingBean, ResourceLoaderAware {
 	

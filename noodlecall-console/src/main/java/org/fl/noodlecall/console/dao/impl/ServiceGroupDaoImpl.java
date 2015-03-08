@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import org.fl.noodlecall.console.dao.ServiceGroupDao;
 import org.fl.noodlecall.console.domain.ServiceGroupMd;
 import org.fl.noodlecall.console.persistence.sql.DynamicSqlTemplate;
-import org.fl.noodlecall.console.util.vo.PageVo;
+import org.fl.noodle.common.mvc.vo.PageVo;
 import org.fl.noodlecall.console.vo.ServiceGroupVo;
 
 @Repository("serviceGroupDao")

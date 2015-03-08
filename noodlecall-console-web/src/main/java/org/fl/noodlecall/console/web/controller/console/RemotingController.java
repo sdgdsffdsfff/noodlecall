@@ -5,7 +5,8 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.fl.noodle.common.mvc.annotation.NoodleRequestParam;
+import org.fl.noodle.common.mvc.annotation.NoodleResponseBody;
 import org.fl.noodlecall.console.remoting.ConsoleRemotingResult;
 import org.fl.noodlecall.console.service.ClientService;
 import org.fl.noodlecall.console.service.ServerService;
@@ -14,8 +15,6 @@ import org.fl.noodlecall.console.vo.ClientVo;
 import org.fl.noodlecall.console.vo.MethodVo;
 import org.fl.noodlecall.console.vo.ServerVo;
 import org.fl.noodlecall.console.vo.ServiceVo;
-import org.fl.noodlecall.console.web.mvc.annotation.RequestParam;
-import org.fl.noodlecall.console.web.mvc.annotation.ResponseBody;
 
 @Controller
 @RequestMapping(value = "remoting")
@@ -28,8 +27,8 @@ public class RemotingController {
 	private ServerService serverService;
 	
 	@RequestMapping(value = "/clientregister")
-	@ResponseBody(type="json-java")
-	public ConsoleRemotingResult clientRegister(@RequestParam ClientVo vo) {
+	@NoodleResponseBody(type="json-java")
+	public ConsoleRemotingResult clientRegister(@NoodleRequestParam ClientVo vo) {
 		try {
 			vo.setClient_Id(clientService.updateOrInsertClient(vo));
 		} catch (Exception e) {
@@ -39,8 +38,8 @@ public class RemotingController {
 	}
 	
 	@RequestMapping(value = "/clientcancel")
-	@ResponseBody(type="json-java")
-	public ConsoleRemotingResult clientCancel(@RequestParam ClientVo vo) {
+	@NoodleResponseBody(type="json-java")
+	public ConsoleRemotingResult clientCancel(@NoodleRequestParam ClientVo vo) {
 		vo.setSystem_Status(ConsoleConstant.SYSTEM_STATUS_OFFLINE);
 		try {
 			clientService.updateClient(vo);
@@ -51,11 +50,11 @@ public class RemotingController {
 	}
 	
 	@RequestMapping(value = "/serverregister")
-	@ResponseBody(type="json-java")
+	@NoodleResponseBody(type="json-java")
 	public ConsoleRemotingResult serverRegister(
-			@RequestParam ServerVo vo, 
-			@RequestParam(name="input-service") ServiceVo serviceVo, 
-			@RequestParam(name="input-method") MethodVo[] methodVos,
+			@NoodleRequestParam ServerVo vo, 
+			@NoodleRequestParam(name="input-service") ServiceVo serviceVo, 
+			@NoodleRequestParam(name="input-method") MethodVo[] methodVos,
 			boolean isUpdate
 			) {
 		try {
@@ -71,8 +70,8 @@ public class RemotingController {
 	}
 	
 	@RequestMapping(value = "/servercancel")
-	@ResponseBody(type="json-java")
-	public ConsoleRemotingResult serverCancel(@RequestParam ServerVo vo) {
+	@NoodleResponseBody(type="json-java")
+	public ConsoleRemotingResult serverCancel(@NoodleRequestParam ServerVo vo) {
 		vo.setSystem_Status(ConsoleConstant.SYSTEM_STATUS_OFFLINE);
 		try {
 			serverService.updateServer(vo);
@@ -83,8 +82,8 @@ public class RemotingController {
 	}
 	
 	@RequestMapping(value = "/getclientneedinfo")
-	@ResponseBody(type="json-java")
-	public ConsoleRemotingResult clientGetServerList(@RequestParam ClientVo[] vos) {
+	@NoodleResponseBody(type="json-java")
+	public ConsoleRemotingResult clientGetServerList(@NoodleRequestParam ClientVo[] vos) {
 		try {
 			return new ConsoleRemotingResult(clientService.queryClientNeedInfo(vos));
 		} catch (Exception e) {
@@ -93,8 +92,8 @@ public class RemotingController {
 	}
 	
 	@RequestMapping(value = "/clientbeat")
-	@ResponseBody(type="json-java")
-	public ConsoleRemotingResult clientBeat(@RequestParam ClientVo[] vos) {
+	@NoodleResponseBody(type="json-java")
+	public ConsoleRemotingResult clientBeat(@NoodleRequestParam ClientVo[] vos) {
 		for (ClientVo vo : vos) {			
 			vo.setBeat_Time(new Date());
 			try {
@@ -107,8 +106,8 @@ public class RemotingController {
 	}
 	
 	@RequestMapping(value = "/serverbeat")
-	@ResponseBody(type="json-java")
-	public ConsoleRemotingResult serverBeat(@RequestParam ServerVo[] vos) {
+	@NoodleResponseBody(type="json-java")
+	public ConsoleRemotingResult serverBeat(@NoodleRequestParam ServerVo[] vos) {
 		for (ServerVo vo : vos) {			
 			vo.setBeat_Time(new Date());
 			try {

@@ -22,6 +22,12 @@
   <dependencies>
   
   	<dependency>
+		<groupId>org.fl.noodle.common.mvc.vo</groupId>
+		<artifactId>noodlecommon-mvc-vo</artifactId>
+		<version>1.0.0</version>
+	</dependency>
+  
+  	<dependency>
 		<groupId>org.fl.noodlecall.util</groupId>
 		<artifactId>noodlecall-util</artifactId>
 		<version>${noodlecall.util.version}</version>

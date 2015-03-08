@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.fl.noodle.common.mvc.annotation.NoodleResponseBody;
 import org.fl.noodlecall.console.service.ClientService;
 import org.fl.noodlecall.console.service.MethodService;
 import org.fl.noodlecall.console.service.ServerService;
@@ -18,7 +18,6 @@ import org.fl.noodlecall.console.vo.MethodVo;
 import org.fl.noodlecall.console.vo.ServerVo;
 import org.fl.noodlecall.console.vo.ServiceGroupVo;
 import org.fl.noodlecall.console.vo.ServiceVo;
-import org.fl.noodlecall.console.web.mvc.annotation.ResponseBody;
 import org.fl.noodlecall.core.connect.expand.monitor.constent.ModuleType;
 
 @Controller
@@ -41,14 +40,14 @@ public class ServerTreeController {
 	private ServerService serverService;
 	
 	@RequestMapping(value = "/querynull")
-	@ResponseBody
+	@NoodleResponseBody
 	public List<TreeVo> queryNull() throws Exception {
 		List<TreeVo> treeVoList = new ArrayList<TreeVo>();
 		return treeVoList;
 	}
 	
 	@RequestMapping(value = "/queryservicelist")
-	@ResponseBody
+	@NoodleResponseBody
 	public List<TreeVo> queryServiceList(String queryInfo) throws Exception {
 		
 		List<TreeVo> treeVoList = new ArrayList<TreeVo>();
@@ -75,7 +74,7 @@ public class ServerTreeController {
 	}
 	
 	@RequestMapping(value = "/querymethodlist")
-	@ResponseBody
+	@NoodleResponseBody
 	public List<TreeVo> queryMethodList(String queryInfo, String pid) throws Exception {
 		
 		List<TreeVo> treeVoList = new ArrayList<TreeVo>();
@@ -103,7 +102,7 @@ public class ServerTreeController {
 	}
 	
 	@RequestMapping(value = "/querygrouplist")
-	@ResponseBody
+	@NoodleResponseBody
 	public List<TreeVo> queryGroupList(String pid, String ppid) throws Exception {
 		
 		List<TreeVo> treeVoList = new ArrayList<TreeVo>();
@@ -125,7 +124,7 @@ public class ServerTreeController {
 	}
 	
 	@RequestMapping(value = "/queryclientlist")
-	@ResponseBody
+	@NoodleResponseBody
 	public List<TreeVo> queryClientList(String pid, String pppid) throws Exception {
 		
 		List<TreeVo> treeVoList = new ArrayList<TreeVo>();
@@ -149,7 +148,7 @@ public class ServerTreeController {
 	}
 	
 	@RequestMapping(value = "/queryserverlist")
-	@ResponseBody
+	@NoodleResponseBody
 	public List<TreeVo> queryServerList(String pid, String ppid, String ppppid) throws Exception {
 		
 		List<TreeVo> treeVoList = new ArrayList<TreeVo>();

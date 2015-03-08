@@ -40,12 +40,12 @@
 		</property>
 		<property name="customArgumentResolvers">
 			<list>
-				<bean class="org.fl.noodlecall.console.web.mvc.MethodArgumentResolver"></bean>
+				<bean class="org.fl.noodle.common.mvc.MethodArgumentResolver"></bean>
 			</list>
 		</property>
 		<property name="customReturnValueHandlers">
 			<list>
-				<bean class="org.fl.noodlecall.console.web.mvc.MethodReturnValueHandler">
+				<bean class="org.fl.noodle.common.mvc.MethodReturnValueHandler">
 					<constructor-arg>
 						<list>  
 							<bean class="org.springframework.http.converter.StringHttpMessageConverter">  
@@ -70,7 +70,7 @@
 	<mvc:resources location="/common/js/" mapping="/js/**"/>
 	<mvc:resources location="/common/tool/" mapping="/tool/**"/>
     
-    <bean id="exceptionResolver" class="org.fl.noodlecall.console.web.mvc.ExceptionResolver" >
+    <bean id="exceptionResolver" class="org.fl.noodle.common.mvc.ExceptionResolver" >
     	<constructor-arg>
 			<list>  
 				<bean class="org.springframework.http.converter.StringHttpMessageConverter">  

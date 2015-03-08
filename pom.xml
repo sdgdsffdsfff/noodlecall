@@ -100,6 +100,18 @@
 			<version>1.0.0</version>
 		</dependency>
 		
+		<dependency>
+			<groupId>org.fl.noodle.common.mvc</groupId>
+			<artifactId>noodlecommon-mvc</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.fl.noodle.common.mvc.vo</groupId>
+			<artifactId>noodlecommon-mvc-vo</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		
 	    <dependency>
 	      <groupId>junit</groupId>
 	      <artifactId>junit</artifactId>

@@ -3,7 +3,7 @@ package org.fl.noodlecall.console.service;
 import java.util.List;
 import java.util.Map;
 
-import org.fl.noodlecall.console.util.vo.PageVo;
+import org.fl.noodle.common.mvc.vo.PageVo;
 import org.fl.noodlecall.console.vo.ClientVo;
 
 public interface ClientService {

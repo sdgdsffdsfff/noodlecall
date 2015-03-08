@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import org.fl.noodlecall.console.dao.ServiceGroupDao;
 import org.fl.noodlecall.console.service.ServiceGroupService;
-import org.fl.noodlecall.console.util.vo.PageVo;
+import org.fl.noodle.common.mvc.vo.PageVo;
 import org.fl.noodlecall.console.vo.ServiceGroupVo;
 
 @Service("serviceGroupService")

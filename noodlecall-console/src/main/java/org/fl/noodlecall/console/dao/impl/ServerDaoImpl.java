@@ -11,7 +11,7 @@ import org.fl.noodlecall.console.dao.ServerDao;
 import org.fl.noodlecall.console.domain.ServerMd;
 import org.fl.noodlecall.console.persistence.sql.DynamicSqlTemplate;
 import org.fl.noodlecall.console.util.ConsoleConstant;
-import org.fl.noodlecall.console.util.vo.PageVo;
+import org.fl.noodle.common.mvc.vo.PageVo;
 import org.fl.noodlecall.console.vo.ServerVo;
 
 @Repository("serverDao")

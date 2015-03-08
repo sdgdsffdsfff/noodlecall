@@ -11,7 +11,7 @@ import org.fl.noodlecall.console.dao.MethodDao;
 import org.fl.noodlecall.console.domain.MethodMd;
 import org.fl.noodlecall.console.persistence.sql.DynamicSqlTemplate;
 import org.fl.noodlecall.console.util.ConsoleConstant;
-import org.fl.noodlecall.console.util.vo.PageVo;
+import org.fl.noodle.common.mvc.vo.PageVo;
 import org.fl.noodlecall.console.vo.MethodVo;
 
 @Repository("methodDao")

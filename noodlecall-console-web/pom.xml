@@ -18,6 +18,16 @@
   
   <dependencies>
   
+ 	<dependency>
+		<groupId>org.fl.noodle.common.mvc</groupId>
+		<artifactId>noodlecommon-mvc</artifactId>
+	</dependency> 
+ 	
+ 	<dependency>
+		<groupId>org.fl.noodle.common.mvc.vo</groupId>
+		<artifactId>noodlecommon-mvc-vo</artifactId>
+	</dependency>
+ 	
   	<dependency>
 		<groupId>org.fl.noodlecall.console</groupId>
 		<artifactId>noodlecall-console</artifactId>

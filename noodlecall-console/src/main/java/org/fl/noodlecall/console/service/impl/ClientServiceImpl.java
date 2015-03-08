@@ -16,7 +16,7 @@ import org.fl.noodlecall.console.dao.ServiceGroupDao;
 import org.fl.noodlecall.console.remoting.constent.ConsoleRemotingConstant;
 import org.fl.noodlecall.console.service.ClientService;
 import org.fl.noodlecall.console.util.ConsoleConstant;
-import org.fl.noodlecall.console.util.vo.PageVo;
+import org.fl.noodle.common.mvc.vo.PageVo;
 import org.fl.noodlecall.console.vo.ClientVo;
 import org.fl.noodlecall.console.vo.GroupVo;
 import org.fl.noodlecall.console.vo.MethodVo;

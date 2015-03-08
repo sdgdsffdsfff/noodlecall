@@ -6,9 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.fl.noodlecall.console.web.mvc.annotation.RequestParam;
-import org.fl.noodlecall.console.web.mvc.annotation.ResponseBody;
+import org.fl.noodle.common.mvc.annotation.NoodleRequestParam;
+import org.fl.noodle.common.mvc.annotation.NoodleResponseBody;
 import org.fl.noodlecall.monitor.performance.persistence.redis.RedisPerformancePersistence;
 import org.fl.noodlecall.monitor.performance.vo.KeyVo;
 
@@ -20,7 +19,7 @@ public class ChartController {
 	RedisPerformancePersistence redisPerformancePersistence;
 	
 	@RequestMapping(value = "/getdatetime")
-	@ResponseBody
+	@NoodleResponseBody
 	public ChartVo getdatetime() throws Exception {
 		
 		Date now = new Date();
@@ -30,22 +29,22 @@ public class ChartController {
 	}
 	
 	@RequestMapping(value = "/querychartsinglenow")
-	@ResponseBody
-	public List<ChartVo> queryChartSingleNow(@RequestParam KeyVo keyVo, String region) throws Exception {
+	@NoodleResponseBody
+	public List<ChartVo> queryChartSingleNow(@NoodleRequestParam KeyVo keyVo, String region) throws Exception {
 		long regionLong = region != null && !region.equals("") ? Long.valueOf(region) : 60;
 		long nowTime = System.currentTimeMillis();
 		return redisPerformancePersistence.queryList(keyVo.toKeyString(), nowTime - regionLong * 60000, nowTime, ChartVo.class);
 	}
 	
 	@RequestMapping(value = "/querychartbganded")
-	@ResponseBody
-	public List<ChartVo> queryChartBgAndEd(@RequestParam KeyVo keyVo, @RequestParam(type = "date") Date beginTime, @RequestParam(type = "date") Date endTime) throws Exception {
+	@NoodleResponseBody
+	public List<ChartVo> queryChartBgAndEd(@NoodleRequestParam KeyVo keyVo, @NoodleRequestParam(type = "date") Date beginTime, @NoodleRequestParam(type = "date") Date endTime) throws Exception {
 		return redisPerformancePersistence.queryList(keyVo.toKeyString(), beginTime.getTime(), endTime.getTime(), ChartVo.class);
 	}
 	
 	@RequestMapping(value = "/querychartsinglenowlast")
-	@ResponseBody
-	public List<ChartVo> queryChartSinglenowlast(@RequestParam KeyVo keyVo, String intervalLastTime) throws Exception {
+	@NoodleResponseBody
+	public List<ChartVo> queryChartSinglenowlast(@NoodleRequestParam KeyVo keyVo, String intervalLastTime) throws Exception {
 		long intervalLastTimeLong = intervalLastTime != null && !intervalLastTime.equals("") ? Long.valueOf(intervalLastTime) : System.currentTimeMillis();
 		return redisPerformancePersistence.queryList(keyVo.toKeyString(), intervalLastTimeLong, Long.MAX_VALUE, ChartVo.class);
 	}

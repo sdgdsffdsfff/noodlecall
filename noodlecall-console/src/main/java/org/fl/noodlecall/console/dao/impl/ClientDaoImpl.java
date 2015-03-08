@@ -12,7 +12,7 @@ import org.fl.noodlecall.console.dao.ClientDao;
 import org.fl.noodlecall.console.domain.ClientMd;
 import org.fl.noodlecall.console.persistence.sql.DynamicSqlTemplate;
 import org.fl.noodlecall.console.util.ConsoleConstant;
-import org.fl.noodlecall.console.util.vo.PageVo;
+import org.fl.noodle.common.mvc.vo.PageVo;
 import org.fl.noodlecall.console.vo.ClientVo;
 import org.fl.noodlecall.console.vo.ServerVo;
 

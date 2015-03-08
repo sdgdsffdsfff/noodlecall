@@ -9,7 +9,7 @@ import org.fl.noodlecall.console.dao.MethodDao;
 import org.fl.noodlecall.console.dao.ServerDao;
 import org.fl.noodlecall.console.dao.ServiceDao;
 import org.fl.noodlecall.console.service.ServerService;
-import org.fl.noodlecall.console.util.vo.PageVo;
+import org.fl.noodle.common.mvc.vo.PageVo;
 import org.fl.noodlecall.console.vo.MethodVo;
 import org.fl.noodlecall.console.vo.ServerVo;
 import org.fl.noodlecall.console.vo.ServiceVo;
