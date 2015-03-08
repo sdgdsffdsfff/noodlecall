@@ -2,8 +2,8 @@ package org.fl.noodlecall.core.connect.net.register;
 
 import java.util.Map.Entry;
 
+import org.fl.noodle.common.connect.register.ClientModuleRegister;
 import org.fl.noodlecall.console.remoting.ConsoleRemotingInvoke;
-import org.fl.noodlecall.core.connect.register.ClientModuleRegister;
 
 public class NetClientModuleRegister extends ClientModuleRegister {
 	

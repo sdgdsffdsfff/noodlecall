@@ -13,8 +13,8 @@
 	
 	<import resource="classpath:org/fl/noodlecall/core/connect/net/distinguish/noodlecall-core-connect-net-distinguish.xml" />
 
-    <bean id="failoverConnectClusterFactory" class="org.fl.noodlecall.core.connect.cluster.FailoverConnectClusterFactory" />
-    <bean id="onceConnectClusterFactory" class="org.fl.noodlecall.core.connect.cluster.OnceConnectClusterFactory" />
-    <bean id="allConnectClusterFactory" class="org.fl.noodlecall.core.connect.cluster.AllConnectClusterFactory" />
+    <bean id="failoverConnectClusterFactory" class="org.fl.noodle.common.connect.cluster.FailoverConnectClusterFactory" />
+    <bean id="onceConnectClusterFactory" class="org.fl.noodle.common.connect.cluster.OnceConnectClusterFactory" />
+    <bean id="allConnectClusterFactory" class="org.fl.noodle.common.connect.cluster.AllConnectClusterFactory" />
 	
 </beans>

@@ -2,9 +2,9 @@ package org.fl.noodlecall.core.connect.net.distinguish;
 
 import java.lang.reflect.Method;
 
-import org.fl.noodlecall.core.connect.distinguish.ConnectDistinguish;
-import org.fl.noodlecall.core.connect.manager.ConnectManager;
-import org.fl.noodlecall.core.connect.manager.ConnectManagerPool;
+import org.fl.noodle.common.connect.distinguish.ConnectDistinguish;
+import org.fl.noodle.common.connect.manager.ConnectManager;
+import org.fl.noodle.common.connect.manager.ConnectManagerPool;
 import org.fl.noodlecall.core.connect.net.constent.NetConnectManagerType;
 import org.fl.noodlecall.core.connect.net.rpc.Invocation;
 

@@ -11,8 +11,8 @@
 			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd"
 	default-autowire="byName">
 	
-	<bean id="randomConnectRouteFactory" class="org.fl.noodlecall.core.connect.route.RandomConnectRouteFactory" />
-	<bean id="weightConnectRouteFactory" class="org.fl.noodlecall.core.connect.route.WeightConnectRouteFactory" />
-	<bean id="responseConnectRouteFactory" class="org.fl.noodlecall.core.connect.route.ResponseConnectRouteFactory" />
+	<bean id="randomConnectRouteFactory" class="org.fl.noodle.common.connect.route.RandomConnectRouteFactory" />
+	<bean id="weightConnectRouteFactory" class="org.fl.noodle.common.connect.route.WeightConnectRouteFactory" />
+	<bean id="responseConnectRouteFactory" class="org.fl.noodle.common.connect.route.ResponseConnectRouteFactory" />
 	
 </beans>

@@ -6,11 +6,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.fl.noodle.common.connect.register.ServerModuleRegister;
 import org.fl.noodlecall.console.remoting.ConsoleRemotingInvoke;
 import org.fl.noodlecall.console.vo.MethodVo;
 import org.fl.noodlecall.console.vo.ServiceVo;
 import org.fl.noodlecall.core.connect.net.util.NetServiceTools;
-import org.fl.noodlecall.core.connect.register.ServerModuleRegister;
 
 public class NetServerModuleRegister extends ServerModuleRegister {
 	

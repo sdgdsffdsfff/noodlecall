@@ -28,6 +28,11 @@
 		<artifactId>noodlecommon-mvc-vo</artifactId>
 	</dependency>
  	
+ 	<dependency>
+  		<groupId>org.fl.noodle.common.connect.expand</groupId>
+  		<artifactId>noodlecommon-connect-expand-api</artifactId>
+	</dependency>
+ 	
   	<dependency>
 		<groupId>org.fl.noodlecall.console</groupId>
 		<artifactId>noodlecall-console</artifactId>

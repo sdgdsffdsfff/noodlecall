@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.fl.noodle.common.connect.expand.monitor.constent.ModuleType;
 import org.fl.noodle.common.mvc.annotation.NoodleResponseBody;
 import org.fl.noodlecall.console.service.ClientService;
 import org.fl.noodlecall.console.service.MethodService;
@@ -18,7 +19,6 @@ import org.fl.noodlecall.console.vo.MethodVo;
 import org.fl.noodlecall.console.vo.ServerVo;
 import org.fl.noodlecall.console.vo.ServiceGroupVo;
 import org.fl.noodlecall.console.vo.ServiceVo;
-import org.fl.noodlecall.core.connect.expand.monitor.constent.ModuleType;
 
 @Controller
 @RequestMapping(value = "monitor/server/tree")

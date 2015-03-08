@@ -1,7 +1,7 @@
 package org.fl.noodlecall.core.connect.net.serialize;
 
+import org.fl.noodle.common.connect.serialize.ConnectSerialize;
 import org.fl.noodle.common.util.json.JsonTranslator;
-import org.fl.noodlecall.core.connect.serialize.ConnectSerialize;
 
 public class JsonNetConnectSerialize implements ConnectSerialize {
 

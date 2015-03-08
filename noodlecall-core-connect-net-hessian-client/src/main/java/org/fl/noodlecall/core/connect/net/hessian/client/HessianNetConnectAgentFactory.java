@@ -1,7 +1,7 @@
 package org.fl.noodlecall.core.connect.net.hessian.client;
 
-import org.fl.noodlecall.core.connect.agent.AbstractConnectAgentFactory;
-import org.fl.noodlecall.core.connect.agent.ConnectAgent;
+import org.fl.noodle.common.connect.agent.AbstractConnectAgentFactory;
+import org.fl.noodle.common.connect.agent.ConnectAgent;
 
 public class HessianNetConnectAgentFactory extends AbstractConnectAgentFactory {
 

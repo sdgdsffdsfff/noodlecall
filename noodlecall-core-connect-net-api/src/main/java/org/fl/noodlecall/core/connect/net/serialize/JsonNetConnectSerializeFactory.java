@@ -1,7 +1,7 @@
 package org.fl.noodlecall.core.connect.net.serialize;
 
-import org.fl.noodlecall.core.connect.serialize.ConnectSerialize;
-import org.fl.noodlecall.core.connect.serialize.ConnectSerializeFactory;
+import org.fl.noodle.common.connect.serialize.ConnectSerialize;
+import org.fl.noodle.common.connect.serialize.ConnectSerializeFactory;
 
 public class JsonNetConnectSerializeFactory implements ConnectSerializeFactory {
 

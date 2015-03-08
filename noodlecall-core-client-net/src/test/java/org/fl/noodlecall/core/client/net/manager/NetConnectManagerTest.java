@@ -1,11 +1,10 @@
 package org.fl.noodlecall.core.client.net.manager;
 
+import org.fl.noodle.common.connect.register.ClientModuleRegister;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
-
-import org.fl.noodlecall.core.connect.register.ClientModuleRegister;
 
 @ContextConfiguration(locations = {
 		"classpath:org/fl/noodlecall/core/client/net/manager/noodlecall-core-client-net-manager.xml"

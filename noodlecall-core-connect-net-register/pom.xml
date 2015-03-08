@@ -20,13 +20,12 @@
   </properties>
   
   <dependencies>
-  
-  	<dependency>
-      	<groupId>org.fl.noodlecall.core.connect</groupId>
-  		<artifactId>noodlecall-core-connect-api</artifactId>
-  		<version>${noodlecall.core.connect.api.version}</version>
-    </dependency>
   	
+  	<dependency>
+		<groupId>org.fl.noodle.common.connect</groupId>
+		<artifactId>noodlecommon-connect-api</artifactId>
+	</dependency>
+	
   	<dependency>
       	<groupId>org.fl.noodlecall.core.connect.net</groupId>
   		<artifactId>noodlecall-core-connect-net-api</artifactId>

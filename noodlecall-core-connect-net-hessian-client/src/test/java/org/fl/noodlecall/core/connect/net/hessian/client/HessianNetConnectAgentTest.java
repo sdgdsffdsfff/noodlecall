@@ -1,8 +1,7 @@
 package org.fl.noodlecall.core.connect.net.hessian.client;
 
 import org.junit.Test;
-
-import org.fl.noodlecall.core.connect.agent.ConnectAgent;
+import org.fl.noodle.common.connect.agent.ConnectAgent;
 import org.fl.noodlecall.core.connect.net.rpc.Invocation;
 import org.fl.noodlecall.core.connect.net.rpc.Invoker;
 

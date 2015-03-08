@@ -1,10 +1,10 @@
 package org.fl.noodlecall.core.connect.net.agent;
 
-import org.fl.noodlecall.core.connect.agent.AbstractConnectAgent;
-import org.fl.noodlecall.core.connect.distinguish.ConnectDistinguish;
-import org.fl.noodlecall.core.connect.expand.monitor.PerformanceMonitor;
+import org.fl.noodle.common.connect.agent.AbstractConnectAgent;
+import org.fl.noodle.common.connect.distinguish.ConnectDistinguish;
+import org.fl.noodle.common.connect.expand.monitor.PerformanceMonitor;
+import org.fl.noodle.common.connect.serialize.ConnectSerialize;
 import org.fl.noodlecall.core.connect.net.rpc.Invoker;
-import org.fl.noodlecall.core.connect.serialize.ConnectSerialize;
 
 public abstract class AbstractNetConnectAgent extends AbstractConnectAgent {
 
