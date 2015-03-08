@@ -2,7 +2,7 @@ package org.fl.noodlecall.core.connect.net.netty.client;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+import org.fl.noodle.common.net.socket.SocketConnect;
 import org.fl.noodlecall.core.connect.distinguish.ConnectDistinguish;
 import org.fl.noodlecall.core.connect.exception.ConnectRefusedException;
 import org.fl.noodlecall.core.connect.exception.ConnectResetException;
@@ -15,7 +15,6 @@ import org.fl.noodlecall.core.connect.net.constent.NetConnectAgentType;
 import org.fl.noodlecall.core.connect.net.rpc.Invocation;
 import org.fl.noodlecall.core.connect.net.rpc.Invoker;
 import org.fl.noodlecall.core.connect.net.rpc.Result;
-import org.fl.noodlecall.util.tools.SocketConnect;
 
 public class NettyNetConnectAgent extends AbstractNetConnectAgent implements Invoker {
 

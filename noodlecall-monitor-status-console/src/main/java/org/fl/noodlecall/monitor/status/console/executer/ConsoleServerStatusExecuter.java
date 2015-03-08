@@ -8,11 +8,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.fl.noodle.common.net.http.HttpConnect;
 import org.fl.noodle.common.net.http.jdk.HttpConnectJdk;
+import org.fl.noodle.common.net.socket.SocketConnect;
 import org.fl.noodlecall.console.service.ServerService;
 import org.fl.noodlecall.console.util.ConsoleConstant;
 import org.fl.noodlecall.console.vo.ServerVo;
 import org.fl.noodlecall.monitor.api.schedule.executer.AbstractExecuter;
-import org.fl.noodlecall.util.tools.SocketConnect;
 
 public class ConsoleServerStatusExecuter extends AbstractExecuter {
 

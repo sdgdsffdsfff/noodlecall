@@ -2,8 +2,7 @@ package org.fl.noodlecall.core.connect.net.netty.client;
 
 import org.apache.commons.pool.BasePoolableObjectFactory;
 import org.apache.commons.pool.impl.GenericObjectPool;
-
-import org.fl.noodlecall.util.tools.SocketConnect;
+import org.fl.noodle.common.net.socket.SocketConnect;
 
 public class NettyNetConnectPool {
 	
