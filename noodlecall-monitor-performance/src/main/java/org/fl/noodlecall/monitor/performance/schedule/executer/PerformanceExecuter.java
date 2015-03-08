@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+import org.fl.noodle.common.util.json.JsonTranslator;
 import org.fl.noodlecall.core.connect.expand.monitor.PerformanceMonitor;
 import org.fl.noodlecall.core.connect.expand.monitor.constent.ModuleType;
 import org.fl.noodlecall.core.connect.register.ClientModuleRegister;
@@ -17,7 +17,6 @@ import org.fl.noodlecall.monitor.performance.storage.ThreadLocalStorage;
 import org.fl.noodlecall.monitor.performance.vo.InfoVo;
 import org.fl.noodlecall.monitor.performance.vo.KeyVo;
 import org.fl.noodlecall.monitor.performance.vo.NetVo;
-import org.fl.noodlecall.util.tools.ObjectJsonTranslator;
 
 public class PerformanceExecuter extends AbstractExecuter implements PerformanceMonitor {
 
@@ -140,7 +139,7 @@ public class PerformanceExecuter extends AbstractExecuter implements Performance
 				}
 				
 				try {
-					udpClient.send(ObjectJsonTranslator.toString(netVo));
+					udpClient.send(JsonTranslator.toString(netVo));
 				} catch (Exception e) {
 					if (logger.isErrorEnabled()) {
 						logger.error("execute -> udpClient.send -> themeName:{}, monitorType:{}, moduleType:{}, moduleId{} -> Exception:{}", keyVo.getThemeName(), keyVo.getMonitorType(), keyVo.getModuleType(), keyVo.getModuleId(), e.getMessage());

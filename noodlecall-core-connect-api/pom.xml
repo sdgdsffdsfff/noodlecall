@@ -22,6 +22,11 @@
   <dependencies>
   
   	<dependency>
+		<groupId>org.fl.noodle.common.util</groupId>
+	  	<artifactId>noodlecommon-util</artifactId>
+	</dependency>
+
+  	<dependency>
       	<groupId>org.fl.noodlecall.util</groupId>
   		<artifactId>noodlecall-util</artifactId>
   		<version>${noodlecall.util.version}</version>

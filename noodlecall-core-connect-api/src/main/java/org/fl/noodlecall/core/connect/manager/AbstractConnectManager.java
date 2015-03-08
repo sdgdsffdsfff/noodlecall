@@ -11,7 +11,8 @@ import java.util.concurrent.Executors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+import org.fl.noodle.common.util.thread.ExecutorThreadFactory;
+import org.fl.noodle.common.util.thread.Stopping;
 import org.fl.noodlecall.core.connect.agent.ConnectAgent;
 import org.fl.noodlecall.core.connect.agent.ConnectAgentFactory;
 import org.fl.noodlecall.core.connect.cluster.ConnectCluster;
@@ -21,8 +22,6 @@ import org.fl.noodlecall.core.connect.performance.ConnectPerformanceInfo;
 import org.fl.noodlecall.core.connect.route.ConnectRoute;
 import org.fl.noodlecall.core.connect.route.ConnectRouteFactory;
 import org.fl.noodlecall.core.connect.serialize.ConnectSerializeFactory;
-import org.fl.noodlecall.core.util.ExecutorThreadFactory;
-import org.fl.noodlecall.core.util.Stopping;
 
 public abstract class AbstractConnectManager implements ConnectManager {
 	

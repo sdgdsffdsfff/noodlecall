@@ -6,9 +6,8 @@ import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+import org.fl.noodle.common.util.json.JsonTranslator;
 import org.fl.noodlecall.monitor.performance.persistence.PerformancePersistence;
-import org.fl.noodlecall.util.tools.ObjectJsonTranslator;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
@@ -64,7 +63,7 @@ public class RedisPerformancePersistence extends JedisPoolConfig implements Perf
 		try {
 			if (valueSet != null) {				
 				for (String value : valueSet) {
-					T t = ObjectJsonTranslator.fromString(value, clazz);
+					T t = JsonTranslator.fromString(value, clazz);
 					result.add(t);
 				}	
 			}
@@ -82,7 +81,7 @@ public class RedisPerformancePersistence extends JedisPoolConfig implements Perf
 		String member = null;
 		
 		try {
-			member = ObjectJsonTranslator.toString(vo);
+			member = JsonTranslator.toString(vo);
 		} catch (Exception e) {
 			if (logger.isErrorEnabled()) {
 				logger.error("insert -> ObjectJsonTranslator.toString -> ip:{}, port:{}, keyName{}, score:{} -> Exception{}", ip, port, keyName, score, e.getMessage());

@@ -21,6 +21,11 @@
   
   <dependencies>
 
+  	<dependency>
+		<groupId>org.fl.noodle.common.util</groupId>
+	  	<artifactId>noodlecommon-util</artifactId>
+	</dependency>
+	
 	<dependency>
 	  	<groupId>org.fl.noodlecall.monitor.api</groupId>
   		<artifactId>noodlecall-monitor-api</artifactId>

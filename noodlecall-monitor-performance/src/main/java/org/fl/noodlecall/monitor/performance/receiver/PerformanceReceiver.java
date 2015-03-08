@@ -7,14 +7,13 @@ import java.util.concurrent.Executors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import org.fl.noodlecall.core.util.Stopping;
+import org.fl.noodle.common.util.json.JsonTranslator;
+import org.fl.noodle.common.util.thread.Stopping;
 import org.fl.noodlecall.monitor.performance.net.UdpServer;
 import org.fl.noodlecall.monitor.performance.persistence.PerformancePersistence;
 import org.fl.noodlecall.monitor.performance.vo.InfoVo;
 import org.fl.noodlecall.monitor.performance.vo.KeyVo;
 import org.fl.noodlecall.monitor.performance.vo.NetVo;
-import org.fl.noodlecall.util.tools.ObjectJsonTranslator;
 
 public class PerformanceReceiver {
 	
@@ -84,7 +83,7 @@ public class PerformanceReceiver {
 			NetVo netVo = null;
 			
 			try {
-				netVo = ObjectJsonTranslator.fromString(recvStr, NetVo.class);
+				netVo = JsonTranslator.fromString(recvStr, NetVo.class);
 			} catch (Exception e) {
 				if (logger.isErrorEnabled()) {
 					logger.error("save -> ObjectJsonTranslator.fromString -> {} -> Exception:{}", recvStr, e.getMessage());
