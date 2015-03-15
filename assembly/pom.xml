@@ -21,88 +21,119 @@
   </properties>
   
   <dependencies>
-  	
+  
+ 	<dependency>
+		<groupId>org.fl.noodle.common.mvc</groupId>
+		<artifactId>noodlecommon-mvc</artifactId>
+	</dependency> 
+ 	
+ 	<dependency>
+		<groupId>org.fl.noodle.common.mvc.vo</groupId>
+		<artifactId>noodlecommon-mvc-vo</artifactId>
+	</dependency>
+ 	
+ 	<dependency>
+  		<groupId>org.fl.noodle.common.connect.expand</groupId>
+  		<artifactId>noodlecommon-connect-expand-api</artifactId>
+	</dependency>
+ 	
+	<dependency>
+		<groupId>org.fl.noodle.common.monitor.performance</groupId>
+		<artifactId>noodlecommon-monitor-performance</artifactId>
+	</dependency>
+ 	
   	<dependency>
-			<groupId>org.fl.noodlecall.console</groupId>
-			<artifactId>noodlecall-console</artifactId>
-			<version>${noodlecall.console.version}</version>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.fl.noodlecall.util</groupId>
-			<artifactId>noodlecall-util</artifactId>
-			<version>${noodlecall.util.version}</version>
-		</dependency>
-	  
+		<groupId>org.fl.noodlecall.console</groupId>
+		<artifactId>noodlecall-console</artifactId>
+		<version>${noodlecall.console.version}</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.fl.noodlecall.console.remoting</groupId>
+  		<artifactId>noodlecall-console-remoting</artifactId>
+		<version>${noodlecall.console.remoting.version}</version>
+	</dependency>
+	
+	<dependency>
+  		<groupId>org.fl.noodlecall.monitor.status.console</groupId>
+	  	<artifactId>noodlecall-monitor-status-console</artifactId>
+		<version>${noodlecall.monitor.statust.console.version}</version>
+	</dependency>
+  
+    <dependency>
+      	<groupId>junit</groupId>
+      	<artifactId>junit</artifactId>
+    </dependency>
+    
     <!-- spring framework -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context-support</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-orm</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-	    <groupId>org.aspectj</groupId>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context-support</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-orm</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webmvc</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-web</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-test</artifactId>
+		<scope>test</scope>
+	</dependency>
+	<dependency>
+    	<groupId>org.aspectj</groupId>
     	<artifactId>aspectjweaver</artifactId>
     </dependency>
-	
-		<!-- log -->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-		</dependency>
-		<dependency>   
-			<groupId>ch.qos.logback</groupId>  
-			<artifactId>logback-classic</artifactId>  
-		</dependency>
-	
-		<!-- DataSource -->
-		<dependency>
-			<groupId>c3p0</groupId>
-			<artifactId>c3p0</artifactId>
-		</dependency>
-	
-		<!-- Mysql Java Connector -->
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-		</dependency>
-	
-		<!-- Hibernate -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-orm</artifactId>
-		</dependency>
-		<dependency>
+
+	<!-- log -->
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-api</artifactId>
+	</dependency>
+	<dependency>   
+		<groupId>ch.qos.logback</groupId>  
+		<artifactId>logback-classic</artifactId>  
+	</dependency>
+
+	<!-- DataSource -->
+	<dependency>
+		<groupId>c3p0</groupId>
+		<artifactId>c3p0</artifactId>
+	</dependency>
+
+	<!-- Mysql Java Connector -->
+	<dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+	</dependency>
+
+	<!-- Hibernate -->
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-core</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-orm</artifactId>
+	</dependency>
+	<dependency>
     	<groupId>javassist</groupId>
     	<artifactId>javassist</artifactId>
     </dependency>
-		
-		<!-- DynamicSqlTemplate -->
-		<dependency>
+	
+	<!-- DynamicSqlTemplate -->
+	<dependency>
     	<groupId>avalon</groupId>
     	<artifactId>avalon-framework</artifactId>
     </dependency>
@@ -110,95 +141,89 @@
     	<groupId>org.apache.velocity</groupId>
     	<artifactId>velocity</artifactId>
     </dependency>
-	    
-	  	<!-- PropertyUtils -->
-		<dependency>
-			<groupId>commons-beanutils</groupId>
-			<artifactId>commons-beanutils</artifactId>
+    
+  	<!-- PropertyUtils -->
+	<dependency>
+		<groupId>commons-beanutils</groupId>
+		<artifactId>commons-beanutils</artifactId>
   	</dependency>
-	    
-	    <!-- mvc -->
-		<dependency>
-			<groupId>org.apache.tomcat</groupId>
-			<artifactId>servlet-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-web</artifactId>
-		</dependency>
-	    <dependency>
-			<groupId>taglibs</groupId>
-			<artifactId>standard</artifactId>
-		</dependency>
-	   	
-	  <dependency>  
-		  <groupId>org.slf4j</groupId>  
-		  <artifactId>jcl-over-slf4j</artifactId>  
-		</dependency>
-	 	<dependency>
-		    <groupId>org.logback-extensions</groupId>
-		    <artifactId>logback-ext-spring</artifactId>
-		</dependency>
-
-		<!-- Quartz -->
-		<dependency>
-		  <groupId>org.quartz-scheduler</groupId>
-		  <artifactId>quartz</artifactId>
-		</dependency>
+    
+    <!-- mvc -->
+	<dependency>
+		<groupId>org.apache.tomcat</groupId>
+		<artifactId>servlet-api</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>jstl</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webmvc</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-web</artifactId>
+	</dependency>
+    <dependency>
+		<groupId>taglibs</groupId>
+		<artifactId>standard</artifactId>
+	</dependency>
+   	
+   	<dependency>  
+	  <groupId>org.slf4j</groupId>  
+	  <artifactId>jcl-over-slf4j</artifactId>  
+	</dependency>
+ 	<dependency>
+	    <groupId>org.logback-extensions</groupId>
+	    <artifactId>logback-ext-spring</artifactId>
+	</dependency>
     
   </dependencies>
   
   <build>
 
-		<finalName>${noodlecall.name}-${noodlecall.version}</finalName>
+	<finalName>${noodlecall.name}-${noodlecall.version}</finalName>
 
     <plugins>
       <plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>assembly</id>
-						<phase>package</phase>
-						<goals>
-						  <goal>single</goal>
-						</goals>
-						<configuration>
-						  <descriptors>
-							 <descriptor>src/main/descriptors/war.xml</descriptor>
-						  </descriptors>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-antrun-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>rename-war</id>
-						<phase>package</phase>
-						<goals>
-							<goal>run</goal>
-						</goals>
-						<configuration>
-							<tasks>
-								<copy file="${project.build.directory}/${parent.artifactId}-${project.version}.war" tofile="${project.build.directory}/${parent.artifactId}.war"/>
-								<delete file="${project.build.directory}/${parent.artifactId}-${project.version}.war"/>
-							</tasks>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-assembly-plugin</artifactId>
+			<executions>
+				<execution>
+					<id>assembly</id>
+					<phase>package</phase>
+					<goals>
+					  <goal>single</goal>
+					</goals>
+					<configuration>
+					  <descriptors>
+						 <descriptor>src/main/descriptors/war.xml</descriptor>
+					  </descriptors>
+					</configuration>
+				</execution>
+			</executions>
+		</plugin>
+		
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-antrun-plugin</artifactId>
+			<executions>
+				<execution>
+					<id>rename-war</id>
+					<phase>package</phase>
+					<goals>
+						<goal>run</goal>
+					</goals>
+					<configuration>
+						<tasks>
+							<copy file="${project.build.directory}/${parent.artifactId}-${project.version}.war" tofile="${project.build.directory}/${parent.artifactId}.war"/>
+							<delete file="${project.build.directory}/${parent.artifactId}-${project.version}.war"/>
+						</tasks>
+					</configuration>
+				</execution>
+			</executions>
+		</plugin>
 
 	    <plugin>
 	      <groupId>org.apache.maven.plugins</groupId>

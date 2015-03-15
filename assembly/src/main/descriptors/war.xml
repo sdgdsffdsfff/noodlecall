@@ -10,59 +10,48 @@
 	
 	<fileSets>
 		<fileSet>
-			<directory>../noodlecall-console-web/target/noodlecall-console-web</directory>
-			<outputDirectory>/</outputDirectory>
-			<excludes>
-        <exclude>WEB-INF/classes/bean/**</exclude>
-        <exclude>WEB-INF/lib/**</exclude>
-        <exclude>WEB-INF/classes/logback.xml</exclude>
-        <exclude>WEB-INF/classes/quartz.properties</exclude>
-        <exclude>WEB-INF/web.xml</exclude>
-        <exclude>WEB-INF/classes/.gitignore</exclude>
-		  </excludes>
-			<fileMode>0644</fileMode>
-      <directoryMode>0755</directoryMode>
-      <filtered>false</filtered>
-		</fileSet>
+		<directory>../noodlecall-console-web/target/noodlecall-console-web</directory>
+		<outputDirectory>/</outputDirectory>
+		<excludes>
+			<exclude>WEB-INF/classes/bean/**</exclude>
+			<exclude>WEB-INF/lib/**</exclude>
+			<exclude>WEB-INF/classes/logback.xml</exclude>
+			<exclude>WEB-INF/web.xml</exclude>
+			<exclude>WEB-INF/classes/.gitignore</exclude>
+		</excludes>
+		<fileMode>0644</fileMode>
+		<directoryMode>0755</directoryMode>
+		<filtered>false</filtered>
+	</fileSet>
 		<fileSet>
 			<directory>src/resources/bean</directory>
 			<outputDirectory>WEB-INF/classes/bean</outputDirectory>
 			<includes>
-        <include>**</include>
-      </includes>
+				<include>**</include>
+			</includes>
 			<fileMode>0644</fileMode>
-      <directoryMode>0755</directoryMode>
-      <filtered>true</filtered>
+			<directoryMode>0755</directoryMode>
+			<filtered>true</filtered>
 		</fileSet>
 		<fileSet>
 			<directory>src/resources/log</directory>
 			<outputDirectory>WEB-INF/classes</outputDirectory>
 			<includes>
-        <include>**</include>
-      </includes>
+				<include>**</include>
+			</includes>
 			<fileMode>0644</fileMode>
-      <directoryMode>0755</directoryMode>
-      <filtered>true</filtered>
-		</fileSet>
-		<fileSet>
-			<directory>src/resources/quartz</directory>
-			<outputDirectory>WEB-INF/classes</outputDirectory>
-			<includes>
-        <include>**</include>
-      </includes>
-			<fileMode>0644</fileMode>
-      <directoryMode>0755</directoryMode>
-      <filtered>true</filtered>
+			<directoryMode>0755</directoryMode>
+			<filtered>true</filtered>
 		</fileSet>
 		<fileSet>
 			<directory>src/resources/web</directory>
 			<outputDirectory>WEB-INF</outputDirectory>
 			<includes>
-        <include>**</include>
-      </includes>
+				<include>**</include>
+			</includes>
 			<fileMode>0644</fileMode>
-      <directoryMode>0755</directoryMode>
-      <filtered>true</filtered>
+			<directoryMode>0755</directoryMode>
+			<filtered>true</filtered>
 		</fileSet>
 	</fileSets>
 	

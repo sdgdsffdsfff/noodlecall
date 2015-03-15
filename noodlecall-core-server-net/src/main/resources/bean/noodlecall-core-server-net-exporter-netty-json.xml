@@ -11,8 +11,8 @@
 			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd"
 	default-autowire="byName">
 	
-	<import resource="classpath:bean/noodlecall-console-web-bean.xml" />
-	<import resource="classpath:bean/noodlecall-monitor-status.xml" />
-	<import resource="classpath:bean/noodlecall-monitor-performance.xml" />
+	<import resource="classpath:bean/noodlecall-monitor-status-schedule-beat-server.xml" />
 	
+	<import resource="classpath:org/fl/noodlecall/core/connect/net/netty/server/noodlecall-core-connect-net-netty-server.xml" />
+
 </beans>

@@ -11,8 +11,18 @@
 			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd"
 	default-autowire="byName">
 	
-	<import resource="classpath:bean/noodlecall-console-web-bean.xml" />
-	<import resource="classpath:bean/noodlecall-monitor-status.xml" />
-	<import resource="classpath:bean/noodlecall-monitor-performance.xml" />
+	<bean id="consoleClientStatusExecuter" class="org.fl.noodlecall.monitor.status.console.executer.ConsoleClientStatusExecuter" />
+	<bean id="consoleServerStatusExecuter" class="org.fl.noodlecall.monitor.status.console.executer.ConsoleServerStatusExecuter" />
+	
+	<bean id="statusExecuterSchedule" class="org.fl.noodle.common.monitor.schedule.ExecuterSchedule"
+		init-method="start" destroy-method="destroy" >
+		<property name="delay" value="10" />
+		<property name="executerList">
+			<list>
+				<ref bean="consoleClientStatusExecuter" />
+				<ref bean="consoleServerStatusExecuter" />
+			</list>
+		</property>
+	</bean>
 	
 </beans>

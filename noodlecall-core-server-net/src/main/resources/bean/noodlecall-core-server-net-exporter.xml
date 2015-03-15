@@ -11,8 +11,11 @@
 			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd"
 	default-autowire="byName">
 	
-	<import resource="classpath:bean/noodlecall-console-web-bean.xml" />
-	<import resource="classpath:bean/noodlecall-monitor-status.xml" />
-	<import resource="classpath:bean/noodlecall-monitor-performance.xml" />
+	<import resource="classpath:org/fl/noodlecall/core/connect/net/register/noodlecall-core-server-net-register.xml" />
+	<import resource="classpath:org/fl/noodlecall/monitor/status/beat/schedule/noodlecall-monitor-status-schedule-beat-server.xml" />
+	
+	<bean id="consoleRemotingInvoke" class="org.fl.noodlecall.console.remoting.ConsoleRemotingInvokeHttp">
+		<property name="consoleUrl" value="${console.remoting.ip}" />
+    </bean>
 	
 </beans>

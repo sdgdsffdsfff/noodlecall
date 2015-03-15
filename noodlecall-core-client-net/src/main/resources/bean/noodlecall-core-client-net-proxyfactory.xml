@@ -11,22 +11,16 @@
 			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd"
 	default-autowire="byName">
 	
-	<bean id="mailSender" class="org.fl.noodlecall.alarm.device.mail.MailSender" >
-		<property name="sender" value="Autohome noodlecall" />
-		<property name="senderEmail" value="autohome_noodlecall@163.com" />
-		<property name="user" value="autohome_noodlecall" />
-		<property name="password" value="autohome2014" />
-		<property name="smtpHost" value="smtp.163.com" />
-	</bean>
-	
-	<bean id="alarmDevice" class="org.fl.noodlecall.alarm.device.AlarmDevice" 
-		init-method="start" destroy-method="destroy" />
-	
-	<bean id="checkIntervalAlarm" class="org.fl.noodlecall.alarm.jobs.CheckIntervalAlarm">
-		<property name="jobType" value="completion" />
-		<property name="delayTime" value="60" />
-	</bean>
-	
-	<bean id="sendLogAlarm" class="org.fl.noodlecall.alarm.sender.SendLogAlarm" />
-	
+	<import resource="classpath:org/fl/noodlecall/core/connect/net/register/noodlecall-core-client-net-register.xml" />
+	<import resource="classpath:org/fl/noodlecall/core/client/net/manager/noodlecall-core-client-net-manager.xml" />
+	<import resource="classpath:org/fl/noodlecall/monitor/status/beat/schedule/noodlecall-monitor-status-schedule-beat-client.xml" />
+ 
+ 	<bean id="consoleRemotingInvoke" class="org.fl.noodlecall.console.remoting.ConsoleRemotingInvokeHttp">
+		<property name="consoleUrl" value="${console.remoting.ip}" />
+    </bean>
+ 
+    <bean id="testNetService" class="org.fl.noodlecall.core.client.net.refer.ServiceProxyFactory">
+		<property name="interfaceName" value="org.fl.noodlecall.core.connect.net.TestNetService"/>
+    </bean>
+
 </beans>

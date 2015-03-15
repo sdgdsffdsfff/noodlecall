@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>  
 
-	<appender name="noodlecall-STANDARD-APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">    
+	<appender name="NOODLECALL-STANDARD-APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">    
 		<file>../logs/noodlecall/noodlecall-standard-logfile.log</file>    
 		<filter class="ch.qos.logback.classic.filter.LevelFilter">
 			<level>INFO</level>
@@ -20,7 +20,7 @@
 		</encoder>  
 	</appender>
 	
-	<appender name="noodlecall-DEBUG-APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">    
+	<appender name="NOODLECALL-DEBUG-APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">    
 		<file>../logs/noodlecall/noodlecall-debug-logfile.log</file>    
 		<filter class="ch.qos.logback.classic.filter.LevelFilter">
 			<level>DEBUG</level>
@@ -39,7 +39,7 @@
 		</encoder>  
 	</appender>
 	
-	<appender name="noodlecall-ERROR-APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">    
+	<appender name="NOODLECALL-ERROR-APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">    
 		<file>../logs/noodlecall/noodlecall-error-logfile.log</file>    
 		<filter class="ch.qos.logback.classic.filter.LevelFilter">
 			<level>ERROR</level>
@@ -72,15 +72,15 @@
 	</appender>
 	
 	<logger name="org.fl.noodlecall" level="DEBUG" additivity="false">    
-		<appender-ref ref="noodlecall-STANDARD-APPENDER" /> 
-		<appender-ref ref="noodlecall-DEBUG-APPENDER" /> 
-		<appender-ref ref="noodlecall-ERROR-APPENDER" /> 
+		<appender-ref ref="NOODLECALL-STANDARD-APPENDER" /> 
+		<appender-ref ref="NOODLECALL-DEBUG-APPENDER" /> 
+		<appender-ref ref="NOODLECALL-ERROR-APPENDER" /> 
 	</logger>
 	
 	<root level="DEBUG">    
-		<appender-ref ref="noodlecall-STANDARD-APPENDER" /> 
-		<appender-ref ref="noodlecall-DEBUG-APPENDER" /> 
-		<appender-ref ref="noodlecall-ERROR-APPENDER" /> 
+		<appender-ref ref="NOODLECALL-STANDARD-APPENDER" /> 
+		<appender-ref ref="NOODLECALL-DEBUG-APPENDER" /> 
+		<appender-ref ref="NOODLECALL-ERROR-APPENDER" /> 
 	</root>
 	
 </configuration>

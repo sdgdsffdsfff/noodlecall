@@ -5,11 +5,10 @@
 	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="
-			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
-			http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
-			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
-			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
-			http://activemq.apache.org/schema/core	http://activemq.apache.org/schema/core/activemq-core-5.5.0.xsd"
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+			http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd"
 	default-autowire="byName">
 	
 	<context:component-scan base-package="org.fl.noodlecall.console" use-default-filters="false" >
@@ -24,16 +23,16 @@
 		<property name="password" value="${console.db.password}" />
 		
 		<property name="minPoolSize" value="20" />
-    <property name="maxPoolSize" value="300" />  
-    <property name="initialPoolSize" value="20" />
-    <property name="maxIdleTime" value="25000" />
-    <property name="acquireIncrement" value="10" />
-   
-    <property name="acquireRetryAttempts" value="30" />
-    <property name="acquireRetryDelay" value="1000" />
-    <property name="testConnectionOnCheckin" value="true" />
-    <property name="idleConnectionTestPeriod" value="3" />
-    <property name="checkoutTimeout" value="5000"/>
+	    <property name="maxPoolSize" value="100" />  
+	    <property name="initialPoolSize" value="20" />
+	    <property name="maxIdleTime" value="25000" />
+	    <property name="acquireIncrement" value="10" />
+	   
+	    <property name="acquireRetryAttempts" value="30" />
+	    <property name="acquireRetryDelay" value="1000" />
+	    <property name="testConnectionOnCheckin" value="true" />
+	    <property name="idleConnectionTestPeriod" value="18000" />
+	    <property name="checkoutTimeout" value="2000"/>
 	</bean>
 	
 	<bean id="slaveDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
@@ -43,19 +42,19 @@
 		<property name="password" value="${console.db.password}" />
 		
 		<property name="minPoolSize" value="20" />
-    <property name="maxPoolSize" value="300" />  
-    <property name="initialPoolSize" value="20" />
-    <property name="maxIdleTime" value="25000" />
-    <property name="acquireIncrement" value="10" />
-   
-    <property name="acquireRetryAttempts" value="30" />
-    <property name="acquireRetryDelay" value="1000" />
-    <property name="testConnectionOnCheckin" value="true" />
-    <property name="idleConnectionTestPeriod" value="3" />
-    <property name="checkoutTimeout" value="5000"/>
+	    <property name="maxPoolSize" value="100" />  
+	    <property name="initialPoolSize" value="20" />
+	    <property name="maxIdleTime" value="25000" />
+	    <property name="acquireIncrement" value="10" />
+	   
+	    <property name="acquireRetryAttempts" value="30" />
+	    <property name="acquireRetryDelay" value="1000" />
+	    <property name="testConnectionOnCheckin" value="true" />
+	    <property name="idleConnectionTestPeriod" value="18000" />
+	    <property name="checkoutTimeout" value="2000"/>
 	</bean>
 	
-	<bean id="dataSource" class="org.fl.noodlecall.console.datasource.MultipleRoutingDataSource">
+	<bean id="dataSource" class="org.fl.noodle.common.dbseparate.datasource.MultipleRoutingDataSource">
 		<property name="targetDataSources">
 			<map>
 				<entry key="master" value-ref="masterDataSource" />
@@ -73,7 +72,7 @@
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
 				<prop key="hibernate.show_sql">false</prop>
-				<prop key="hibernate.format_sql">false</prop>
+				<prop key="hibernate.format_sql">true</prop>
 				<prop key="hibernate.hbm2ddl.auto">update</prop>
 				<prop key="hibernate.cache.use_second_level_cache">true</prop>
 				<prop key="hibernate.jdbc.batch_size">25</prop>
@@ -118,9 +117,9 @@
         <property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	
-	<bean id="dynamicSqlTemplate" class="org.fl.noodlecall.console.persistence.sql.DynamicSqlTemplateImpl">
+	<bean id="dynamicSqlTemplate" class="org.fl.noodle.common.dynamicsql.DynamicSqlTemplateImpl">
 		<property name="hibernateTemplate" ref="hibernateTemplate" />
-		<property name="isRefresh" value="false" />
+		<property name="isRefresh" value="true" />
 		<property name="pageSize" value="10" />
 		<property name="fileNameList">
 			<list>
@@ -128,12 +127,8 @@
 			</list>
 		</property>
 	</bean>
-	
-	<bean id="jdbcTemplate" class="org.fl.noodlecall.console.template.FailoverJdbcTemplate">   
-         <property name="dataSource" ref="dataSource"/>   
-    </bean>
     
-    <bean id="failoverMethodInterceptor" class="org.fl.noodlecall.console.aop.advice.FailoverMethodInterceptor" />
+    <bean id="failoverMethodInterceptor" class="org.fl.noodle.common.dbseparate.aop.FailoverMethodInterceptor" />
 	
 	<bean id="serviceProxyCreator" class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
 		<property name="interceptorNames">
@@ -146,7 +141,7 @@
 		</property>
 	</bean>
 	
-	<bean id="loadBalancerManager" class="org.fl.noodlecall.console.loadbalancer.LoadBalancerManagerImpl"
+	<bean id="loadBalancerManager" class="org.fl.noodle.common.dbseparate.loadbalancer.LoadBalancerManagerImpl"
 		init-method="start">
 		<property name="initDataSourceMap">
 			<map>
@@ -154,14 +149,9 @@
 				<entry key="slave" value-ref="slaveDataSource" />
 			</map>
 		</property>
-		<property name="totalFailureCount" value="6" />
-		<property name="totalRiseCount" value="200" />
-		<property name="interTime" value="6000" />
-	</bean>
-	
-  <bean id="jumpToMaster" class="org.fl.noodlecall.console.web.jump.JumpToMaster">
-		<property name="port" value="${console.web.actual.port}" />
-		<property name="url" value="${console.callback.url}" />
+		<property name="totalFailureCount" value="2" />
+		<property name="totalRiseCount" value="1" />
+		<property name="interTime" value="2000" />
 	</bean>
 	
 </beans>
