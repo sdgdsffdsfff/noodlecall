@@ -274,7 +274,7 @@
 				return;
 			}
 			var ret = jQuery('#list').jqGrid('getRowData', index);
-			top.openDialog('拓扑图', '<%=request.getContextPath()%>/view/console/service/service-graph/service_graph_main.jsp', ret, 750, 1300, null);					
+			top.openDialog('拓扑图', '<%=request.getContextPath()%>/view/console/service/service-graph/service_graph_main.jsp', ret, 650, 1300, null);					
 		}
 	</script>
   </head>

@@ -281,17 +281,17 @@
 				});
 
 				var connectorPaintStyle = {
-					lineWidth:3,
+					lineWidth:2,
 					strokeStyle:"#61B7CF",
 					joinstyle:"round",
 					outlineColor:"white",
-					outlineWidth:2
+					outlineWidth:1
 				},
 				
 				connectorHoverStyle = {
-					lineWidth:3,
+					lineWidth:2,
 					strokeStyle:"#216477",
-					outlineWidth:2,
+					outlineWidth:1,
 					outlineColor:"white"
 				},
 				
@@ -309,7 +309,7 @@
 						lineWidth:2 
 					},				
 					isSource:true,
-					connector:[ "Flowchart", { stub:[40, 60], gap:10, cornerRadius:5, alwaysRespectStubs:true } ],								                
+					connector:[ "Bezier", { stub:[40, 60], gap:10, cornerRadius:5, alwaysRespectStubs:true } ],								                
 					connectorStyle:connectorPaintStyle,
 					hoverPaintStyle:endpointHoverStyle,
 					connectorHoverStyle:connectorHoverStyle,
