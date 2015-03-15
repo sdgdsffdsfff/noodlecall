@@ -11,7 +11,7 @@ public class ServiceExporterDemoPressJettyHessian {
 		
 		final ClassPathXmlApplicationContext applicationContext
 			= new ClassPathXmlApplicationContext(
-				"classpath:org/fl/noodlecall/demo/server/press/noodlecall-demo-server-jetty-hessian.xml");
+				"classpath:org/fl/noodlecall/demo/server/press/noodlecall-demo-press-server-jetty-hessian.xml");
 		
 		Signal.handle(new Signal("INT"), new SignalHandler() {
 			@Override

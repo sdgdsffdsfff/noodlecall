@@ -11,7 +11,7 @@ public class ServiceExporterDemoPressServletHessian {
 		
 		final ClassPathXmlApplicationContext applicationContext
 			= new ClassPathXmlApplicationContext(
-				"classpath:org/fl/noodlecall/demo/server/press/noodlecall-demo-server-servlet-hessian.xml");
+				"classpath:org/fl/noodlecall/demo/server/press/noodlecall-demo-press-server-servlet-hessian.xml");
 		
 		Signal.handle(new Signal("INT"), new SignalHandler() {
 			@Override

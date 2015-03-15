@@ -1,17 +1,17 @@
-package org.fl.noodlecall.demo.server.press;
+package org.fl.noodlecall.demo.server.example;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import sun.misc.Signal;
 import sun.misc.SignalHandler;
 
-public class ServiceExporterDemoPressNettyJson {
+public class ServiceExporterDemoExampleNettyJson {
 	
 	public static void main(String[] args) {
 		
 		final ClassPathXmlApplicationContext applicationContext
 			= new ClassPathXmlApplicationContext(
-				"classpath:org/fl/noodlecall/demo/server/press/noodlecall-demo-press-server-netty-json.xml");
+				"classpath:org/fl/noodlecall/demo/server/example/noodlecall-demo-example-server-netty-json.xml");
 		
 		Signal.handle(new Signal("INT"), new SignalHandler() {
 			@Override

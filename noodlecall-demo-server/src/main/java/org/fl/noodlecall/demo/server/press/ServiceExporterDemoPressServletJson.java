@@ -11,7 +11,7 @@ public class ServiceExporterDemoPressServletJson {
 		
 		final ClassPathXmlApplicationContext applicationContext
 			= new ClassPathXmlApplicationContext(
-				"classpath:org/fl/noodlecall/demo/server/press/noodlecall-demo-server-servlet-json.xml");
+				"classpath:org/fl/noodlecall/demo/server/press/noodlecall-demo-press-server-servlet-json.xml");
 		
 		Signal.handle(new Signal("INT"), new SignalHandler() {
 			@Override

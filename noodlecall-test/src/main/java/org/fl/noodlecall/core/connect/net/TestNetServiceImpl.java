@@ -7,8 +7,8 @@ public class TestNetServiceImpl implements TestNetService {
 
 	@Override
 	public String sayHello(String name) {
-        System.out.println("[" + new SimpleDateFormat("HH:mm:ss").format(new Date()) + "] Hello " + name + ", request from consumer: ");
-        return "Hello " + name + ", response form provider: ";
+        System.out.println("[" + new SimpleDateFormat("HH:mm:ss").format(new Date()) + "] Hello " + name + ", request from client ");
+        return "Hello " + name + ", response form server ";
 	}
 
 	@Override

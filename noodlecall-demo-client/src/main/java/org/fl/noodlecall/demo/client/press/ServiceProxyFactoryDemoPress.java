@@ -11,7 +11,7 @@ public class ServiceProxyFactoryDemoPress {
 		
 		ClassPathXmlApplicationContext applicationContext
 				= new ClassPathXmlApplicationContext(
-						"classpath:org/fl/noodlecall/demo/server/press/noodlecall-demo-server-proxyfactory.xml");
+						"classpath:org/fl/noodlecall/demo/server/press/noodlecall-demo-press-client-proxyfactory.xml");
 		
 		TestNetService testNetService = (TestNetService) applicationContext.getBean("testNetServiceProxy");
 		
