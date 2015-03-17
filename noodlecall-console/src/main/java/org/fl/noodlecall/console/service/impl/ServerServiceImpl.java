@@ -4,14 +4,18 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import org.fl.noodlecall.console.dao.GroupDao;
 import org.fl.noodlecall.console.dao.MethodDao;
 import org.fl.noodlecall.console.dao.ServerDao;
 import org.fl.noodlecall.console.dao.ServiceDao;
+import org.fl.noodlecall.console.dao.ServiceGroupDao;
 import org.fl.noodlecall.console.service.ServerService;
 import org.fl.noodle.common.mvc.vo.PageVo;
+import org.fl.noodlecall.console.util.ConsoleConstant;
+import org.fl.noodlecall.console.vo.GroupVo;
 import org.fl.noodlecall.console.vo.MethodVo;
 import org.fl.noodlecall.console.vo.ServerVo;
+import org.fl.noodlecall.console.vo.ServiceGroupVo;
 import org.fl.noodlecall.console.vo.ServiceVo;
 
 @Service("serverService")
@@ -25,6 +29,12 @@ public class ServerServiceImpl implements ServerService {
 	
 	@Autowired
 	private MethodDao methodDao;
+	
+	@Autowired
+	private GroupDao groupDao;
+	
+	@Autowired
+	private ServiceGroupDao serviceGroupDao;
 	
 	@Override
 	public PageVo<ServerVo> queryServerPage(ServerVo vo, int page, int rows) throws Exception {
@@ -112,7 +122,23 @@ public class ServerServiceImpl implements ServerService {
 	public Long updateOrInsertServer(ServerVo vo, ServiceVo serviceVo, MethodVo[] methodVos) throws Exception {
 		
 		if (serviceVo != null && serviceVo.getService_Name() != null) {
+			GroupVo groupVo = new GroupVo();
+			groupVo.setGroup_Name("DefaultGroup");
+			List<GroupVo> groupVoList = groupDao.queryGroupList(groupVo);
+			if (groupVoList.size() == 0) {
+				groupVo.setManual_Status(ConsoleConstant.MANUAL_STATUS_YES);
+				groupDao.insertGroup(groupVo);
+			}
+			
 			serviceDao.updateOrInsertService(serviceVo);
+			
+			ServiceGroupVo serviceGroupVo = new ServiceGroupVo();
+			serviceGroupVo.setGroup_Name("DefaultGroup");
+			serviceGroupVo.setService_Name(serviceVo.getService_Name());
+			List<ServiceGroupVo> serviceGroupVoList = serviceGroupDao.queryServiceGroupList(serviceGroupVo);
+			if (serviceGroupVoList.size() == 0) {
+				serviceGroupDao.insertServiceGroup(serviceGroupVo);
+			}
 		}
 		
 		if (methodVos != null && methodVos.length > 0) {			
