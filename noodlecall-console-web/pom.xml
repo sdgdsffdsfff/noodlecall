@@ -179,7 +179,7 @@
   
   <build>
   
-    <finalName>noodlecall-console-web</finalName>
+    <finalName>noodlecall</finalName>
     
 	<!-- <outputDirectory>${basedir}/src/main/webapp/WEB-INF/classes</outputDirectory> -->
 	
