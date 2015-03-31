@@ -69,6 +69,7 @@
 			var notNullArray = [
 			                    'service_Name',
 			                    'manual_Status',
+			                    'inteface_Name',
 			                    'cluster_Type',
 			                    'route_Type'
 			                    ];
@@ -153,8 +154,7 @@
 				<tr>
 			    	<th><label id="inteface_Name_Label">接口名称</label></th>
 			    	<td><input type="text" id="inteface_Name" maxlength="2048"/></td>
-			    	<th><label id="cluster_Type_Label">集群类型
-			    	</label></th>
+			    	<th><label id="cluster_Type_Label">集群类型</label></th>
 			    	<td>
 			    		<select id="cluster_Type" style="width: 83.5%;">
 			    			<option value="">--all--</option>

@@ -66,8 +66,10 @@
 			var notNullArray = [
 			                    'client_Name',
 			                    'manual_Status',
-			                    'cluster_Type',
-			                    'route_Type'
+			                    'system_Status',
+			                    'ip',
+			                    'service_Name',
+			                    'group_Name'
 			                    ];
 			
 			for (var i=0; i<notNullArray.length; i++) {

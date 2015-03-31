@@ -67,7 +67,9 @@
 			                    'method_Name',
 			                    'manual_Status',
 			                    'cluster_Type',
-			                    'route_Type'
+			                    'route_Type',
+			                    'service_Name',
+			                    'is_Downgrade'
 			                    ];
 			
 			for (var i=0; i<notNullArray.length; i++) {

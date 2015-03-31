@@ -65,9 +65,7 @@
 			
 			var notNullArray = [
 			                    'group_Name',
-			                    'manual_Status',
-			                    'cluster_Type',
-			                    'route_Type'
+			                    'manual_Status'
 			                    ];
 			
 			for (var i=0; i<notNullArray.length; i++) {

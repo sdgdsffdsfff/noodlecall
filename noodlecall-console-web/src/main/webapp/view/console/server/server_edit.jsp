@@ -66,8 +66,15 @@
 			var notNullArray = [
 			                    'server_Name',
 			                    'manual_Status',
-			                    'cluster_Type',
-			                    'route_Type'
+			                    'system_Status',
+			                    'ip,'
+			                    'port',
+			                    'url',
+			                    'server_Type',
+			                    'serialize_Type',
+			                    'weight',
+			                    'service_Name',
+			                    'group_Name'
 			                    ];
 			
 			for (var i=0; i<notNullArray.length; i++) {
